@@ -171,6 +171,11 @@
 		84C6460D17EAECBB00696084 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6460C17EAECBB00696084 /* HelloWorldLayer.m */; };
 		84C6461017EAECBB00696084 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6460F17EAECBB00696084 /* IntroLayer.m */; };
 		84C6461217EAECBB00696084 /* grossini_dance_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C6461117EAECBB00696084 /* grossini_dance_atlas.png */; };
+		84C6461B17EE249100696084 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6461A17EE249100696084 /* Model.m */; };
+		84C6461F17EE259700696084 /* RenderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6461E17EE259700696084 /* RenderComponent.m */; };
+		84C6462317EE260D00696084 /* ModelsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6462217EE260D00696084 /* ModelsManager.m */; };
+		84C6462817EE269100696084 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6462717EE269100696084 /* GameController.m */; };
+		84CB537817EE2A9200C01EE5 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB537717EE2A9200C01EE5 /* Component.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -513,6 +518,16 @@
 		84C6460E17EAECBB00696084 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		84C6460F17EAECBB00696084 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		84C6461117EAECBB00696084 /* grossini_dance_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini_dance_atlas.png; path = Resources/grossini_dance_atlas.png; sourceTree = "<group>"; };
+		84C6461917EE249100696084 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = Models/Model.h; sourceTree = "<group>"; };
+		84C6461A17EE249100696084 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = Models/Model.m; sourceTree = "<group>"; };
+		84C6461D17EE259700696084 /* RenderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RenderComponent.h; path = Components/RenderComponent.h; sourceTree = "<group>"; };
+		84C6461E17EE259700696084 /* RenderComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RenderComponent.m; path = Components/RenderComponent.m; sourceTree = "<group>"; };
+		84C6462117EE260D00696084 /* ModelsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelsManager.h; path = Managers/ModelsManager.h; sourceTree = "<group>"; };
+		84C6462217EE260D00696084 /* ModelsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelsManager.m; path = Managers/ModelsManager.m; sourceTree = "<group>"; };
+		84C6462617EE269100696084 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameController.h; path = Controllers/GameController.h; sourceTree = "<group>"; };
+		84C6462717EE269100696084 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameController.m; path = Controllers/GameController.m; sourceTree = "<group>"; };
+		84CB537617EE2A9200C01EE5 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Component.h; path = Components/Component.h; sourceTree = "<group>"; };
+		84CB537717EE2A9200C01EE5 /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Component.m; path = Components/Component.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,6 +588,11 @@
 		84C6441B17EAECB900696084 /* billiards-42 */ = {
 			isa = PBXGroup;
 			children = (
+				84C6462517EE266B00696084 /* Controllers */,
+				84C6462417EE265E00696084 /* Views */,
+				84C6462017EE25EC00696084 /* Managers */,
+				84C6461C17EE257A00696084 /* Components */,
+				84C6461817EE242C00696084 /* Models */,
 				84C6460817EAECBB00696084 /* AppDelegate.h */,
 				84C6460917EAECBB00696084 /* AppDelegate.m */,
 				84C6460B17EAECBB00696084 /* HelloWorldLayer.h */,
@@ -1073,6 +1093,51 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		84C6461817EE242C00696084 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84C6461917EE249100696084 /* Model.h */,
+				84C6461A17EE249100696084 /* Model.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		84C6461C17EE257A00696084 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				84CB537617EE2A9200C01EE5 /* Component.h */,
+				84CB537717EE2A9200C01EE5 /* Component.m */,
+				84C6461D17EE259700696084 /* RenderComponent.h */,
+				84C6461E17EE259700696084 /* RenderComponent.m */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		84C6462017EE25EC00696084 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				84C6462117EE260D00696084 /* ModelsManager.h */,
+				84C6462217EE260D00696084 /* ModelsManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		84C6462417EE265E00696084 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		84C6462517EE266B00696084 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84C6462617EE269100696084 /* GameController.h */,
+				84C6462717EE269100696084 /* GameController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1179,6 +1244,8 @@
 				84C6455E17EAECBA00696084 /* ZipUtils.m in Sources */,
 				84C6445017EAECB900696084 /* CCActionManager.m in Sources */,
 				84C644B817EAECBA00696084 /* CCParticleSystemQuad.m in Sources */,
+				84C6461F17EE259700696084 /* RenderComponent.m in Sources */,
+				84C6462817EE269100696084 /* GameController.m in Sources */,
 				84C6447B17EAECB900696084 /* CCDrawNode.m in Sources */,
 				84C6450D17EAECBA00696084 /* CCTransitionPageTurn.m in Sources */,
 				84C6460117EAECBB00696084 /* cpVect.c in Sources */,
@@ -1203,12 +1270,14 @@
 				84C644E317EAECBA00696084 /* CCSprite.m in Sources */,
 				84C6448A17EAECB900696084 /* CCGrabber.m in Sources */,
 				84C6459417EAECBB00696084 /* mat3.c in Sources */,
+				84C6462317EE260D00696084 /* ModelsManager.m in Sources */,
 				84C6451E17EAECBA00696084 /* CCES2Renderer.m in Sources */,
 				84C6449017EAECB900696084 /* CCLabelAtlas.m in Sources */,
 				84C644AC17EAECBA00696084 /* CCParallaxNode.m in Sources */,
 				84C6444417EAECB900696084 /* CCActionGrid.m in Sources */,
 				84C645EB17EAECBB00696084 /* cpCollision.c in Sources */,
 				84C6448D17EAECB900696084 /* CCGrid.m in Sources */,
+				84CB537817EE2A9200C01EE5 /* Component.m in Sources */,
 				84C6459C17EAECBB00696084 /* quaternion.c in Sources */,
 				84C644E917EAECBA00696084 /* CCSpriteFrame.m in Sources */,
 				84C6445617EAECB900696084 /* CCActionProgressTimer.m in Sources */,
@@ -1252,6 +1321,7 @@
 				84C6450417EAECBA00696084 /* CCTMXTiledMap.m in Sources */,
 				84C644C517EAECBA00696084 /* CCRenderTexture.m in Sources */,
 				84C6444D17EAECB900696084 /* CCActionInterval.m in Sources */,
+				84C6461B17EE249100696084 /* Model.m in Sources */,
 				84C645D917EAECBB00696084 /* cpRatchetJoint.c in Sources */,
 				84C644BB17EAECBA00696084 /* CCPhysicsDebugNode.m in Sources */,
 				84C6444117EAECB900696084 /* CCActionEase.m in Sources */,
@@ -1405,6 +1475,7 @@
 				84C6461717EAECBB00696084 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
