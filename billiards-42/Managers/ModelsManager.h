@@ -13,10 +13,12 @@
 @interface ModelsManager : NSObject
 
 - (uint32_t) generateNewMid;
-// - (Model *) createModel; // I don't see any sense in it
+- (void) addModel:(Model *) model; // I don't see any sense in it
 - (void) addComponent:(Component *)component toModel:(Model*)model;
 - (Component *) getComponentOfClass:(Class) class forModel:(Model *)model;
 - (void)removeModel:(Model *) model;
-- (NSArray *)getAllModelsPosessingComponentOfClass:(Class)class;
+- (void) loadFromJSON:(NSString *) filePath;
+
+//- (NSArray *)getAllModelsPosessingComponentOfClass:(Class)class;
 
 @end

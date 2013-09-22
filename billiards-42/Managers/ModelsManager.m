@@ -51,13 +51,29 @@
     return _componentsByClass[NSStringFromClass(class)][@(model.mid)];
 }
 
+// adds model
+- (void) addModel:(Model *)model {
+    if (model.mid == 0) {
+        model.mid = [self generateNewMid];
+    }
+    [_models addObject:model];
+}
+
+// removes model
 - (void) removeModel:(Model *)model {
     for( NSMutableDictionary * components in _componentsByClass.allValues ) {
         if( components[@(model.mid)]) {
+            // TODO: call each component's "Remove" hook here
+            // like render component should remove assosiated sprite
+            // and physics component to remove assosiated body
             [components removeObjectForKey:@(model.mid)];
         }
     }
     [_models removeObject:@(model.mid)];
+}
+
+- (void) loadFromJSON:(NSString *)filePath {
+    // TODO: implement
 }
 
 /*- (NSArray *) getAllModelsPosessingComponentOfClass:(Class)class {

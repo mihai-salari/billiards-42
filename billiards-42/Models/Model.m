@@ -23,4 +23,8 @@
     return _mid;
 }
 
+- (void) setMid:(uint32_t) val {
+    _mid = val;
+}
+
 @end

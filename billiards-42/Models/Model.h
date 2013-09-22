@@ -12,5 +12,6 @@
 
 - (id)initWithMid:(uint32_t)mid;
 - (uint32_t)mid;
+- (void) setMid:(uint32_t) val;
 
 @end

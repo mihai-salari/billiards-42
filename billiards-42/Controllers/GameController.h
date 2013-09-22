@@ -14,5 +14,6 @@
 @property (retain) ModelsManager *modelsManager; // Controller creates it in init
 
 - (id) init;
+- (id) initWithJSON:(NSString *) filePath;
 
 @end

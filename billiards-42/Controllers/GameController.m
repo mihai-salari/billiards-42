@@ -17,4 +17,12 @@
     return self;
 }
 
+
+- (id) initWithJSON:(NSString *)filePath {
+    if([self init]) {
+        [self.modelsManager loadFromJSON:filePath];
+    }
+    return self;
+}
+
 @end
