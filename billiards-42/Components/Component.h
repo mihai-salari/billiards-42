@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
+#import "Model.h"
 
 @interface Component : NSObject
+
+@property (strong) Model *model;
+
+- (id) initWithModel:(Model *) model;
+- (void) startup; // startup hook - runs once - when level is loaded
+- (void) update:(ccTime) delta; // update
+- (void) beforeRemove; // fires before model is removed from ModelsManager
 
 @end

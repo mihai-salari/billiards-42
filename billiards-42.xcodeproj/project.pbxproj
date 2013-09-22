@@ -1419,6 +1419,7 @@
 				);
 				HEADER_SEARCH_PATHS = "\"billiards-42/libs/kazmath/include\"";
 				INFOPLIST_FILE = "billiards-42/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
@@ -1444,6 +1445,7 @@
 				);
 				HEADER_SEARCH_PATHS = "\"billiards-42/libs/kazmath/include\"";
 				INFOPLIST_FILE = "billiards-42/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",

@@ -10,4 +10,13 @@
 
 @implementation Component
 
+
+
+- (id) initWithModel:(Model *)model {
+    if((self = [super init])) {
+        self.model= model;
+    }
+    return self;
+}
+
 @end

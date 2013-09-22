@@ -11,7 +11,7 @@
 
 @interface GameController : NSObject
 
-@property (retain) ModelsManager *modelsManager; // Controller creates it in init
+@property (strong) ModelsManager *modelsManager; // Controller creates it in init
 
 - (id) init;
 - (id) initWithJSON:(NSString *) filePath;
