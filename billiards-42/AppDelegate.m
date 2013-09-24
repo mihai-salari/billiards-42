@@ -9,6 +9,7 @@
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
+#import "GameManager.h"
 #import "IntroLayer.h"
 
 @implementation MyNavigationController

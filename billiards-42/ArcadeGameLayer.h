@@ -14,7 +14,7 @@
 // Importing Chipmunk headers
 #import "chipmunk.h"
 
-@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface ArcadeGameLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
 	CCTexture2D *_spriteTexture; // weak ref
 	CCPhysicsDebugNode *_debugLayer; // weak ref
@@ -23,8 +23,5 @@
 	
 	cpShape *_walls[4];
 }
-
-// returns a CCScene that contains the HelloWorldLayer as the only child
-+(CCScene *) scene;
 
 @end

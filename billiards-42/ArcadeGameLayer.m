@@ -9,7 +9,10 @@
 #import "AppDelegate.h"
 
 // Import the interfaces
-#import "HelloWorldLayer.h"
+#import "ArcadeGameLayer.h"
+#import "GameManager.h"
+#import "ArcadeGameScene.h"
+#import "MenuScene.h"
 
 enum {
 	kTagParentNode = 1,
@@ -18,30 +21,15 @@ enum {
 
 #pragma mark - HelloWorldLayer
 
-@interface HelloWorldLayer ()
+@interface ArcadeGameLayer ()
 -(void) addNewSpriteAtPosition:(CGPoint)pos;
 -(void) createMenu;
 -(void) initPhysics;
 @end
 
 
-@implementation HelloWorldLayer
+@implementation ArcadeGameLayer
 
-// Helper class method that creates a Scene with the HelloWorldLayer as the only child.
-+(CCScene *) scene
-{
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	
-	// return the scene
-	return scene;
-}
 
 -(id) init
 {
@@ -153,9 +141,14 @@ enum {
 	// Default font size will be 22 points.
 	[CCMenuItemFont setFontSize:22];
 	
+    // Reset Button
+	CCMenuItemLabel *_menu = [CCMenuItemFont itemWithString:@"Back to Menu" block:^(id sender){
+		[[GameManager sharedGameManager] runScene:[MenuScene node]];
+	}];
+    
 	// Reset Button
 	CCMenuItemLabel *reset = [CCMenuItemFont itemWithString:@"Reset" block:^(id sender){
-		[[CCDirector sharedDirector] replaceScene: [HelloWorldLayer scene]];
+		[[GameManager sharedGameManager] runScene:[ArcadeGameScene node]];
 	}];
 	
 	// Debug Button
@@ -195,7 +188,7 @@ enum {
 		[leaderboardViewController release];
 	}];
 	
-	CCMenu *menu = [CCMenu menuWithItems:itemAchievement, itemLeaderboard, debug, reset, nil];
+	CCMenu *menu = [CCMenu menuWithItems:_menu,itemAchievement, itemLeaderboard, debug, reset, nil];
 	
 	[menu alignItemsVertically];
 	
