@@ -176,6 +176,10 @@
 		84C6462317EE260D00696084 /* ModelsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6462217EE260D00696084 /* ModelsManager.m */; };
 		84C6462817EE269100696084 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6462717EE269100696084 /* GameController.m */; };
 		84CB537817EE2A9200C01EE5 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB537717EE2A9200C01EE5 /* Component.m */; };
+		84CB537B17F3F88400C01EE5 /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB537A17F3F88400C01EE5 /* World.m */; };
+		84CB537E17F3FB0300C01EE5 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB537D17F3FB0300C01EE5 /* Wall.m */; };
+		84CB538117F3FC0D00C01EE5 /* Pocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB538017F3FC0D00C01EE5 /* Pocket.m */; };
+		84CB538417F3FC5100C01EE5 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB538317F3FC5100C01EE5 /* Ball.m */; };
 		8AC42FCB17F1521F006479E9 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FCA17F1521F006479E9 /* GameManager.m */; };
 		8AC42FCF17F1595B006479E9 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FCE17F1595B006479E9 /* MenuScene.m */; };
 		8AC42FD217F1599C006479E9 /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FD117F1599C006479E9 /* MenuLayer.m */; };
@@ -532,6 +536,14 @@
 		84C6462717EE269100696084 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameController.m; path = Controllers/GameController.m; sourceTree = "<group>"; };
 		84CB537617EE2A9200C01EE5 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Component.h; path = Components/Component.h; sourceTree = "<group>"; };
 		84CB537717EE2A9200C01EE5 /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Component.m; path = Components/Component.m; sourceTree = "<group>"; };
+		84CB537917F3F88400C01EE5 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = Models/World.h; sourceTree = "<group>"; };
+		84CB537A17F3F88400C01EE5 /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = World.m; path = Models/World.m; sourceTree = "<group>"; };
+		84CB537C17F3FB0300C01EE5 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wall.h; path = Models/Wall.h; sourceTree = "<group>"; };
+		84CB537D17F3FB0300C01EE5 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wall.m; path = Models/Wall.m; sourceTree = "<group>"; };
+		84CB537F17F3FC0D00C01EE5 /* Pocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pocket.h; path = Models/Pocket.h; sourceTree = "<group>"; };
+		84CB538017F3FC0D00C01EE5 /* Pocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pocket.m; path = Models/Pocket.m; sourceTree = "<group>"; };
+		84CB538217F3FC5100C01EE5 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = Models/Ball.h; sourceTree = "<group>"; };
+		84CB538317F3FC5100C01EE5 /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ball.m; path = Models/Ball.m; sourceTree = "<group>"; };
 		8AC42FC917F1521F006479E9 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		8AC42FCA17F1521F006479E9 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		8AC42FCD17F1595B006479E9 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
@@ -1109,6 +1121,14 @@
 			children = (
 				84C6461917EE249100696084 /* Model.h */,
 				84C6461A17EE249100696084 /* Model.m */,
+				84CB537917F3F88400C01EE5 /* World.h */,
+				84CB537A17F3F88400C01EE5 /* World.m */,
+				84CB537C17F3FB0300C01EE5 /* Wall.h */,
+				84CB537D17F3FB0300C01EE5 /* Wall.m */,
+				84CB537F17F3FC0D00C01EE5 /* Pocket.h */,
+				84CB538017F3FC0D00C01EE5 /* Pocket.m */,
+				84CB538217F3FC5100C01EE5 /* Ball.h */,
+				84CB538317F3FC5100C01EE5 /* Ball.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1275,6 +1295,7 @@
 				84C6450717EAECBA00696084 /* CCTMXXMLParser.m in Sources */,
 				84C6460D17EAECBB00696084 /* ArcadeGameLayer.m in Sources */,
 				84C645F517EAECBB00696084 /* cpSpaceComponent.c in Sources */,
+				84CB537B17F3F88400C01EE5 /* World.m in Sources */,
 				84C6459E17EAECBB00696084 /* ray2.c in Sources */,
 				84C6453917EAECBA00696084 /* base64.c in Sources */,
 				84C6445C17EAECB900696084 /* CCActionTween.m in Sources */,
@@ -1304,6 +1325,7 @@
 				84C645A017EAECBB00696084 /* utility.c in Sources */,
 				84C6454C17EAECBA00696084 /* CCVertex.m in Sources */,
 				84C6455217EAECBA00696084 /* NSThread+performBlock.m in Sources */,
+				84CB537E17F3FB0300C01EE5 /* Wall.m in Sources */,
 				84C6445917EAECB900696084 /* CCActionTiledGrid.m in Sources */,
 				84C644A017EAECBA00696084 /* CCMenuItem.m in Sources */,
 				84C6443B17EAECB900696084 /* CCActionCamera.m in Sources */,
@@ -1322,6 +1344,7 @@
 				84C6449017EAECB900696084 /* CCLabelAtlas.m in Sources */,
 				84C644AC17EAECBA00696084 /* CCParallaxNode.m in Sources */,
 				84C6444417EAECB900696084 /* CCActionGrid.m in Sources */,
+				84CB538417F3FC5100C01EE5 /* Ball.m in Sources */,
 				84C645EB17EAECBB00696084 /* cpCollision.c in Sources */,
 				84C6448D17EAECB900696084 /* CCGrid.m in Sources */,
 				84CB537817EE2A9200C01EE5 /* Component.m in Sources */,
@@ -1376,6 +1399,7 @@
 				84C6447E17EAECB900696084 /* CCFontDefinition.m in Sources */,
 				84C644BE17EAECBA00696084 /* CCPhysicsSprite.mm in Sources */,
 				84C645E717EAECBB00696084 /* cpBBTree.c in Sources */,
+				84CB538117F3FC0D00C01EE5 /* Pocket.m in Sources */,
 				84C645A217EAECBB00696084 /* vec2.c in Sources */,
 				84C6459217EAECBB00696084 /* matrix.c in Sources */,
 				84C6447817EAECB900696084 /* CCDrawingPrimitives.m in Sources */,
