@@ -10,13 +10,23 @@
 
 @implementation Component
 
-
-
 - (id) initWithModel:(Model *)model {
     if((self = [super init])) {
         self.model= model;
     }
     return self;
+}
+
+- (void) startup{
+    // empty startup hook -- override
+}
+
+- (void) update:(ccTime)delta {
+    // empty update hook -- override
+}
+
+- (void) beforeRemove {
+    // empty beforeRemove hook - override 
 }
 
 @end

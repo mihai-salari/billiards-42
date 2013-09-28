@@ -7,8 +7,10 @@
 //
 
 #import "Model.h"
+#import "RenderableModel.h"
+#import "PhysicsModel.h"
 
-@interface Ball : Model
+@interface Ball : Model <RenderableModel, PhysicsModel>
 
 @property CGPoint position; // ball position
 @property CGFloat radius; // ball radius

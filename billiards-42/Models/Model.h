@@ -13,5 +13,10 @@
 - (id)initWithMid:(uint32_t)mid;
 - (uint32_t)mid;
 - (void) setMid:(uint32_t) val;
+- (void) addComponent:(NSObject*) component;
+- (NSObject*) getComponentOfClass:(Class) klass;
+
++ (NSArray*) listComponentsClasses; // returns list of components
+
 
 @end

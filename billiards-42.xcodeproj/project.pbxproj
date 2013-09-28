@@ -180,6 +180,7 @@
 		84CB537E17F3FB0300C01EE5 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB537D17F3FB0300C01EE5 /* Wall.m */; };
 		84CB538117F3FC0D00C01EE5 /* Pocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB538017F3FC0D00C01EE5 /* Pocket.m */; };
 		84CB538417F3FC5100C01EE5 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB538317F3FC5100C01EE5 /* Ball.m */; };
+		84CB538717F6D03800C01EE5 /* PhysicsComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB538617F6D03800C01EE5 /* PhysicsComponent.m */; };
 		8AC42FCB17F1521F006479E9 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FCA17F1521F006479E9 /* GameManager.m */; };
 		8AC42FCF17F1595B006479E9 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FCE17F1595B006479E9 /* MenuScene.m */; };
 		8AC42FD217F1599C006479E9 /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FD117F1599C006479E9 /* MenuLayer.m */; };
@@ -544,6 +545,10 @@
 		84CB538017F3FC0D00C01EE5 /* Pocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pocket.m; path = Models/Pocket.m; sourceTree = "<group>"; };
 		84CB538217F3FC5100C01EE5 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = Models/Ball.h; sourceTree = "<group>"; };
 		84CB538317F3FC5100C01EE5 /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ball.m; path = Models/Ball.m; sourceTree = "<group>"; };
+		84CB538517F6D03800C01EE5 /* PhysicsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsComponent.h; path = Components/PhysicsComponent.h; sourceTree = "<group>"; };
+		84CB538617F6D03800C01EE5 /* PhysicsComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhysicsComponent.m; path = Components/PhysicsComponent.m; sourceTree = "<group>"; };
+		84CB538917F6F3FA00C01EE5 /* PhysicsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PhysicsModel.h; path = Components/Protocols/PhysicsModel.h; sourceTree = "<group>"; };
+		84CB538A17F7007500C01EE5 /* RenderableModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RenderableModel.h; path = Components/Protocols/RenderableModel.h; sourceTree = "<group>"; };
 		8AC42FC917F1521F006479E9 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		8AC42FCA17F1521F006479E9 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		8AC42FCD17F1595B006479E9 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
@@ -1136,10 +1141,13 @@
 		84C6461C17EE257A00696084 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				84CB538817F6F3A200C01EE5 /* Protocols */,
 				84CB537617EE2A9200C01EE5 /* Component.h */,
 				84CB537717EE2A9200C01EE5 /* Component.m */,
 				84C6461D17EE259700696084 /* RenderComponent.h */,
 				84C6461E17EE259700696084 /* RenderComponent.m */,
+				84CB538517F6D03800C01EE5 /* PhysicsComponent.h */,
+				84CB538617F6D03800C01EE5 /* PhysicsComponent.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1169,6 +1177,15 @@
 				84C6462717EE269100696084 /* GameController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		84CB538817F6F3A200C01EE5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				84CB538917F6F3FA00C01EE5 /* PhysicsModel.h */,
+				84CB538A17F7007500C01EE5 /* RenderableModel.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		8AC42FCC17F153D6006479E9 /* Scenes */ = {
@@ -1301,6 +1318,7 @@
 				84C6445C17EAECB900696084 /* CCActionTween.m in Sources */,
 				84C6449317EAECB900696084 /* CCLabelBMFont.m in Sources */,
 				84C6454017EAECBA00696084 /* ccCArray.m in Sources */,
+				84CB538717F6D03800C01EE5 /* PhysicsComponent.m in Sources */,
 				84C645CF17EAECBB00696084 /* cpDampedSpring.c in Sources */,
 				84C6456A17EAECBA00696084 /* CDXMacOSXSupport.m in Sources */,
 				84C645F117EAECBB00696084 /* cpShape.c in Sources */,

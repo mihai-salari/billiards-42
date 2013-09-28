@@ -44,7 +44,8 @@
         components = [NSMutableDictionary dictionary];
         _componentsByClass[NSStringFromClass([component class])] = components;
     }
-    components[@(model.mid)] = component;
+    components[@(model.mid)] = component; // this maybe redundant
+    [model addComponent:component];
 }
 
 - (Component *) getComponentOfClass:(Class)class forModel:(Model *)model {

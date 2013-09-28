@@ -10,11 +10,13 @@
 
 @implementation Model {
     uint32_t _mid;
+    NSMutableArray* _components;
 }
 
 - (id)initWithMid:(uint32_t)mid {
     if((self = [super init])) {
         _mid = mid;
+        _components = [NSMutableArray array];
     }
     return self;
 }
@@ -25,6 +27,22 @@
 
 - (void) setMid:(uint32_t) val {
     _mid = val;
+}
+
+- (void) addComponent:(NSObject *)component {
+    // adds component
+    [_components addObject:component];
+}
+
+- (NSObject *) getComponentOfClass:(Class)klass {
+    for( NSObject* c in _components ) {
+        if( [c isKindOfClass:klass] ) return c;
+    }
+    return nil; // return nil if not found
+}
+
++ (NSArray*) listComponentsClasses {
+    return [NSArray array];
 }
 
 @end

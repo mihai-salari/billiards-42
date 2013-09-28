@@ -7,7 +7,30 @@
 //
 
 #import "Wall.h"
+#import "PhysicsComponent.h"
 
 @implementation Wall
+
+cpBody * _cpBody = nil;
+cpShape * _cpShape = nil;
+
++ (NSArray *) listComponentsClasses {
+    return [NSArray arrayWithObject:[PhysicsComponent class]];
+}
+
+- (cpBody *) getBody{
+    if( _cpBody == nil ) [self _createBody];
+    return _cpBody;
+}
+
+- (void) setBody:(cpBody *)body {
+    _cpBody = body; // TODO: maybe through exception for wall in this method?
+}
+
+
+- (void) _createBody {
+    _cpBody = cpBodyNewStatic(); // walls are static bodies
+    _cpShape = cpSegmentShapeNew(_cpBody, cpv(self.start.x, self.start.y) , cpv(self.end.x, self.end.y) , 1); // and add shape to body
+}
 
 @end

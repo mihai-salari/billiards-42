@@ -7,10 +7,11 @@
 //
 
 #import "Model.h"
+#import "PhysicsModel.h"
 
 
 // Wall is renderless model -- only affects physics
-@interface Wall : Model
+@interface Wall : Model <PhysicsModel>
 
 @property CGPoint start; // it will use Line segments in physics
 @property CGPoint end;

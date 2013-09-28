@@ -13,7 +13,7 @@
 @interface ModelsManager : NSObject
 
 - (uint32_t) generateNewMid;
-- (void) addModel:(Model *) model; // I don't see any sense in it
+- (void) addModel:(Model *) model;
 - (void) addComponent:(Component *)component toModel:(Model*)model;
 - (Component *) getComponentOfClass:(Class) class forModel:(Model *)model;
 - (void)removeModel:(Model *) model;

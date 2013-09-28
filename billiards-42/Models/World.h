@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Model.h"
+#import "RenderableModel.h"
 
-@interface World : Model
+@interface World : Model <RenderableModel>
 
 @property CGSize size; // world size ( when zoomed in ) in points
 @property (strong) NSString* background; // background image used
