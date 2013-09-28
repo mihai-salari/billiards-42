@@ -11,7 +11,10 @@
 
 
 // Wall is renderless model -- only affects physics
-@interface Wall : Model <PhysicsModel>
+@interface Wall : Model <PhysicsModel> {
+    cpBody * _cpBody;
+    cpShape * _cpShape;
+}
 
 @property CGPoint start; // it will use Line segments in physics
 @property CGPoint end;

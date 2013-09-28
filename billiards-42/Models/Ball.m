@@ -12,12 +12,19 @@
 
 @implementation Ball
 
-cpBody * _cpBody = nil;
-cpShape * _cpShape = nil;
+
+- (id)initWithMid:(uint32_t)mid {
+    if((self = [super init])) {
+        _cpBody = nil;
+        _cpShape = nil;
+    }
+    return self;
+}
 
 + (NSArray *) listComponentsClasses {
     return [NSArray arrayWithObjects:[RenderComponent class],[PhysicsComponent class], nil];
 }
+
 
 // RenderableModel
 
@@ -53,4 +60,6 @@ cpShape * _cpShape = nil;
     _cpShape = cpCircleShapeNew(_cpBody, self.radius, cpvzero);
 }
 
+
+ 
 @end

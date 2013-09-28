@@ -11,8 +11,15 @@
 
 @implementation Wall
 
-cpBody * _cpBody = nil;
-cpShape * _cpShape = nil;
+
+- (id)initWithMid:(uint32_t)mid {
+    if((self = [super init])) {
+        _cpBody = nil;
+        _cpShape = nil;
+    }
+    return self;
+}
+
 
 + (NSArray *) listComponentsClasses {
     return [NSArray arrayWithObject:[PhysicsComponent class]];
