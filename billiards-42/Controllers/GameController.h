@@ -15,5 +15,13 @@
 
 - (id) init;
 - (id) initWithJSON:(NSString *) filePath;
+- (void) loadFromJSON:(NSString *)filePath;
+// components hooks
+- (void) componentsStartup;
+- (void) componentsUpdate:(ccTime) delta;
+- (void) componentsBeforeRemove;
+
+- (void) componentsHookHelper:(NSString *) methodName;
+
 
 @end

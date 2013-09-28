@@ -11,12 +11,14 @@
 @implementation ModelsManager {
     NSMutableArray * _models;
     NSMutableDictionary * _componentsByClass;
+    NSMutableArray * _components;
     uint32_t _lowestUnassignedMid;
 }
 
 - (id) init {
     if((self = [super init])) {
         _models = [NSMutableArray array];
+        _components = [NSMutableArray array]; // to iterate easily through all components in game
         _componentsByClass = [NSMutableDictionary dictionary];
         _lowestUnassignedMid = 1;
     }
@@ -46,6 +48,11 @@
     }
     components[@(model.mid)] = component; // this maybe redundant
     [model addComponent:component];
+    [_components addObject:component]; // this IS redundant, but allows us to search fast and easy
+}
+
+- (NSMutableArray *) allComponents {
+    return _components;
 }
 
 - (Component *) getComponentOfClass:(Class)class forModel:(Model *)model {

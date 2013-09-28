@@ -14,6 +14,8 @@
 // Importing Chipmunk headers
 #import "chipmunk.h"
 
+#import "GameController.h"
+
 @interface ArcadeGameLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
 	CCTexture2D *_spriteTexture; // weak ref
@@ -22,6 +24,8 @@
 	cpSpace *_space; // strong ref
 	
 	cpShape *_walls[4];
+    
+    GameController *_controller;
 }
 
 @end

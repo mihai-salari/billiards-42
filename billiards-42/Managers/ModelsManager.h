@@ -18,6 +18,7 @@
 - (Component *) getComponentOfClass:(Class) class forModel:(Model *)model;
 - (void)removeModel:(Model *) model;
 - (void) loadFromJSON:(NSString *) filePath;
+- (NSMutableArray*) allComponents;
 
 //- (NSArray *)getAllModelsPosessingComponentOfClass:(Class)class;
 

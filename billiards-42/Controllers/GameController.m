@@ -20,9 +20,39 @@
 
 - (id) initWithJSON:(NSString *)filePath {
     if([self init]) {
-        [self.modelsManager loadFromJSON:filePath];
+        [self loadFromJSON:filePath];
     }
     return self;
+}
+
+- (void) loadFromJSON:(NSString *)filePath {
+    [self.modelsManager loadFromJSON:filePath];
+}
+
+- (void) componentsHookHelper:(NSString *)methodName {
+    SEL selector = NSSelectorFromString(methodName);
+    NSMutableArray* components = [self.modelsManager allComponents];
+    for (Component* component in components) {
+        [component performSelector:selector];
+    }
+}
+
+// calls Startup for every component
+- (void) componentsStartup{
+    [self componentsHookHelper:@"startup"];
+}
+
+// calls beforeRemove for every component
+- (void) componentsBeforeRemove{
+    [self componentsHookHelper:@"beforeRemove"];
+}
+
+// calls Update for every component
+- (void) componentsUpdate:(ccTime)delta {
+    NSMutableArray* components = [self.modelsManager allComponents];
+    for (Component* component in components) {
+        [component update:delta];
+    }
 }
 
 @end

@@ -25,6 +25,7 @@ enum {
 -(void) addNewSpriteAtPosition:(CGPoint)pos;
 -(void) createMenu;
 -(void) initPhysics;
+-(void) createController;
 @end
 
 
@@ -57,7 +58,7 @@ enum {
 		// init physics
 		[self initPhysics];
 		
-		
+		/*
 #if 1
 		// Use batch node. Faster
 		CCSpriteBatchNode *parent = [CCSpriteBatchNode batchNodeWithFile:@"grossini_dance_atlas.png" capacity:100];
@@ -70,11 +71,20 @@ enum {
 		[self addChild:parent z:0 tag:kTagParentNode];
 		
 		[self addNewSpriteAtPosition:ccp(200,200)];
-		
+		*/
+        
+        [self createController];
+        
 		[self scheduleUpdate];
+        
+        
 	}
 	
 	return self;
+}
+
+-(void) createController {
+    _controller = [[GameController alloc] init];
 }
 
 -(void) initPhysics
