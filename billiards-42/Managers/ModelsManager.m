@@ -81,7 +81,24 @@
 }
 
 - (void) loadFromJSON:(NSString *)filePath {
-    // TODO: implement
+    NSError *error = nil;
+    NSString* content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
+    NSData *jsonData = [content dataUsingEncoding:NSASCIIStringEncoding];
+    NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    // process json
+    uint32_t levelId = jsonDict[@"id"]; // Do we need it???
+    NSArray * models = jsonDict[@"models"];
+
+    for (NSDictionary* modelDict in models) {
+        [self createModelFromJson:modelDict];
+    }
+    
+//    NSLog(@"JSON: %@", jsonDict);
+    
+}
+
+- (void) createModelFromJson:(NSDictionary*) jsonDict {
+    NSLog(@"Model JSON: %@", jsonDict);
 }
 
 /*- (NSArray *) getAllModelsPosessingComponentOfClass:(Class)class {

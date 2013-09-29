@@ -1,0 +1,22 @@
+{
+"id":1,
+"models": [
+		{
+			"class":"World",
+			"mid": 1,
+			"size": {
+				"width": 1920,
+				"height": 1280
+			},
+			"background": "level0.png"
+		},
+		{
+			"class":"Ball",
+			"position": {
+				"x": 960,
+				"y": 640
+			},
+			"radius": 31
+		}
+	]
+}
