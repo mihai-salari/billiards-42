@@ -184,6 +184,8 @@
 		84CB539117F8A77800C01EE5 /* ball1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CB538E17F8A77800C01EE5 /* ball1.png */; };
 		84CB539217F8A77800C01EE5 /* level0.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CB538F17F8A77800C01EE5 /* level0.json */; };
 		84CB539317F8A77800C01EE5 /* level0.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CB539017F8A77800C01EE5 /* level0.png */; };
+		8A58A46D17F948E500F1B302 /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A58A46C17F948E500F1B302 /* CreditsScene.m */; };
+		8A58A47017F9490600F1B302 /* CreditsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A58A46F17F9490600F1B302 /* CreditsLayer.m */; };
 		8AC42FCB17F1521F006479E9 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FCA17F1521F006479E9 /* GameManager.m */; };
 		8AC42FCF17F1595B006479E9 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FCE17F1595B006479E9 /* MenuScene.m */; };
 		8AC42FD217F1599C006479E9 /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FD117F1599C006479E9 /* MenuLayer.m */; };
@@ -555,6 +557,10 @@
 		84CB538E17F8A77800C01EE5 /* ball1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball1.png; path = Resources/ball1.png; sourceTree = "<group>"; };
 		84CB538F17F8A77800C01EE5 /* level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = level0.json; path = Resources/level0.json; sourceTree = "<group>"; };
 		84CB539017F8A77800C01EE5 /* level0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = level0.png; path = Resources/level0.png; sourceTree = "<group>"; };
+		8A58A46B17F948E500F1B302 /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsScene.h; sourceTree = "<group>"; };
+		8A58A46C17F948E500F1B302 /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsScene.m; sourceTree = "<group>"; };
+		8A58A46E17F9490600F1B302 /* CreditsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsLayer.h; sourceTree = "<group>"; };
+		8A58A46F17F9490600F1B302 /* CreditsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsLayer.m; sourceTree = "<group>"; };
 		8AC42FC917F1521F006479E9 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		8AC42FCA17F1521F006479E9 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		8AC42FCD17F1595B006479E9 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
@@ -1197,9 +1203,21 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		8A58A46717F948A500F1B302 /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				8A58A46B17F948E500F1B302 /* CreditsScene.h */,
+				8A58A46C17F948E500F1B302 /* CreditsScene.m */,
+				8A58A46E17F9490600F1B302 /* CreditsLayer.h */,
+				8A58A46F17F9490600F1B302 /* CreditsLayer.m */,
+			);
+			name = Credits;
+			sourceTree = "<group>";
+		};
 		8AC42FCC17F153D6006479E9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				8A58A46717F948A500F1B302 /* Credits */,
 				8AC42FD417F16065006479E9 /* ArcadeGame */,
 				8AC42FD317F15F9E006479E9 /* Menu */,
 			);
@@ -1209,10 +1227,10 @@
 		8AC42FD317F15F9E006479E9 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				8AC42FD117F1599C006479E9 /* MenuLayer.m */,
 				8AC42FD017F1599C006479E9 /* MenuLayer.h */,
-				8AC42FCE17F1595B006479E9 /* MenuScene.m */,
+				8AC42FD117F1599C006479E9 /* MenuLayer.m */,
 				8AC42FCD17F1595B006479E9 /* MenuScene.h */,
+				8AC42FCE17F1595B006479E9 /* MenuScene.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -1352,6 +1370,7 @@
 				84C644B217EAECBA00696084 /* CCParticleExamples.m in Sources */,
 				84C644AF17EAECBA00696084 /* CCParticleBatchNode.m in Sources */,
 				84C644F217EAECBA00696084 /* CCTextureAtlas.m in Sources */,
+				8A58A46D17F948E500F1B302 /* CreditsScene.m in Sources */,
 				84C645A017EAECBB00696084 /* utility.c in Sources */,
 				84C6454C17EAECBA00696084 /* CCVertex.m in Sources */,
 				84C6455217EAECBA00696084 /* NSThread+performBlock.m in Sources */,
@@ -1387,6 +1406,7 @@
 				84C644F517EAECBA00696084 /* CCTextureCache.m in Sources */,
 				84C6459817EAECBB00696084 /* neon_matrix_impl.c in Sources */,
 				84C645CD17EAECBB00696084 /* cpDampedRotarySpring.c in Sources */,
+				8A58A47017F9490600F1B302 /* CreditsLayer.m in Sources */,
 				84C644C817EAECBA00696084 /* CCScene.m in Sources */,
 				84C6444717EAECB900696084 /* CCActionGrid3D.m in Sources */,
 				84C6459017EAECBB00696084 /* mat4stack.c in Sources */,

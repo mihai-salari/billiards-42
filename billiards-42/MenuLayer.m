@@ -7,8 +7,6 @@
 //
 
 #import "MenuLayer.h"
-#import "MenuScene.h"
-#import "ArcadeGameScene.h"
 
 @implementation MenuLayer
 
@@ -29,16 +27,21 @@
 	
 	// Reset Button
 	CCMenuItemLabel *arcada = [CCMenuItemFont itemWithString:@"Arcada" block:^(id sender){
-		[[GameManager sharedGameManager] runScene:[ArcadeGameScene node]];
+		[[GameManager sharedGameManager] runSceneWithID:(kArcadeGameScene)];
 	}];
 	
 	// Debug Button
 	CCMenuItemLabel *multiplayer = [CCMenuItemFont itemWithString:@"Multiplayer" block:^(id sender){
-		[[GameManager sharedGameManager] runScene:[MenuScene node]];
+		[[GameManager sharedGameManager] runSceneWithID:(kArcadeGameScene)];
+	}];
+    
+    // Debug Button
+	CCMenuItemLabel *credits = [CCMenuItemFont itemWithString:@"Credits" block:^(id sender){
+		[[GameManager sharedGameManager] runSceneWithID:(kCreditsScene)];
 	}];
 	
 	
-	CCMenu *menu = [CCMenu menuWithItems:arcada, multiplayer, nil];
+	CCMenu *menu = [CCMenu menuWithItems:arcada, multiplayer, credits, nil];
 	
 	[menu alignItemsVertically];
 	

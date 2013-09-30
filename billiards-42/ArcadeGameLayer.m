@@ -12,7 +12,6 @@
 #import "ArcadeGameLayer.h"
 #import "GameManager.h"
 #import "ArcadeGameScene.h"
-#import "MenuScene.h"
 
 enum {
 	kTagParentNode = 1,
@@ -155,12 +154,12 @@ enum {
 	
     // Reset Button
 	CCMenuItemLabel *_menu = [CCMenuItemFont itemWithString:@"Back to Menu" block:^(id sender){
-		[[GameManager sharedGameManager] runScene:[MenuScene node]];
+		[[GameManager sharedGameManager] runSceneWithID:(kMenuScene)];
 	}];
     
 	// Reset Button
 	CCMenuItemLabel *reset = [CCMenuItemFont itemWithString:@"Reset" block:^(id sender){
-		[[GameManager sharedGameManager] runScene:[ArcadeGameScene node]];
+		[[GameManager sharedGameManager] runSceneWithID:(kArcadeGameScene)];
 	}];
 	
 	// Debug Button
