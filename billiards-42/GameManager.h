@@ -9,10 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface GameManager : NSObject
+typedef enum {
+    kIntroScene=0,
+    kMenuScene=1,
+    kCreditsScene=2,
+    kLevelCompleteScene=3,
+    kArcadeGameScene=4,
+    kMultiplayerGameScene=5,
+} Scenes;
 
+@interface GameManager : NSObject{
+    Scenes currentScene;
+}
 
-+(GameManager*)sharedGameManager;                                  // 1
--(void)runScene:(CCScene *)scene;
++(GameManager*)sharedGameManager;
+-(void)runSceneWithID:(Scenes)scene;
 
 @end
