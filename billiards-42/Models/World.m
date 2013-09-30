@@ -31,7 +31,7 @@
 }
 
 - (void) loadFromJSON:(NSDictionary *)jsonDict {
-    self.mid = jsonDict[@"mid"];
+    self.mid = [((NSNumber* )jsonDict[@"mid"]) integerValue ];
     self.size = [ModelFactory CGSizeFromJSON:jsonDict[@"size"]];
     self.background = jsonDict[@"background"];
 }
