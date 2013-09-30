@@ -8,6 +8,7 @@
 
 #import "World.h"
 #import "RenderComponent.h"
+#import "ModelFactory.h"
 
 @implementation World
 
@@ -27,6 +28,12 @@
 - (CGPoint) getPosition
 {
     return CGPointMake(0, 0);
+}
+
+- (void) loadFromJSON:(NSDictionary *)jsonDict {
+    self.mid = jsonDict[@"mid"];
+    self.size = [ModelFactory CGSizeFromJSON:jsonDict[@"size"]];
+    self.background = jsonDict[@"background"];
 }
 
 @end

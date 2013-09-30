@@ -41,6 +41,11 @@
     return nil; // return nil if not found
 }
 
+- (void) loadFromJSON:(NSDictionary *)jsonDict {
+    // empty here - override in child classes
+    // TODO: maybe through NotImplementedException???
+}
+
 + (NSArray*) listComponentsClasses {
     return [NSArray array];
 }

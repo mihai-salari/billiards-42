@@ -15,6 +15,7 @@
 - (void) setMid:(uint32_t) val;
 - (void) addComponent:(NSObject*) component;
 - (NSObject*) getComponentOfClass:(Class) klass;
+- (void) loadFromJSON:( NSDictionary* ) jsonDict;
 
 + (NSArray*) listComponentsClasses; // returns list of components
 

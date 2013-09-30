@@ -9,6 +9,7 @@
 #import "Ball.h"
 #import "PhysicsComponent.h"
 #import "RenderComponent.h"
+#import "ModelFactory.h"
 
 @implementation Ball
 
@@ -60,6 +61,12 @@
     _cpShape = cpCircleShapeNew(_cpBody, self.radius, cpvzero);
 }
 
+// load
+
+- (void) loadFromJSON:(NSDictionary *)jsonDict {
+    self.position = [ModelFactory CGPointFromJSON:jsonDict[@"position"]];
+    self.radius = [( (NSNumber*) jsonDict[@"radius"] ) floatValue];
+}
 
  
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ModelsManager.h"
+#import "ModelFactory.h"
 
 @implementation ModelsManager {
     NSMutableArray * _models;
@@ -93,12 +94,13 @@
         [self createModelFromJson:modelDict];
     }
     
-//    NSLog(@"JSON: %@", jsonDict);
-    
 }
 
 - (void) createModelFromJson:(NSDictionary*) jsonDict {
-    NSLog(@"Model JSON: %@", jsonDict);
+    NSLog(@"Loading model from JSON: %@", jsonDict);
+    Model* model = [ModelFactory BuildUsingJSON:jsonDict];
+    // TODO: create components here
+    [self addModel:model];
 }
 
 /*- (NSArray *) getAllModelsPosessingComponentOfClass:(Class)class {
