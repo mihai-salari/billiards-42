@@ -100,6 +100,14 @@
     NSLog(@"Loading model from JSON: %@", jsonDict);
     Model* model = [ModelFactory BuildUsingJSON:jsonDict];
     // TODO: create components here
+    NSArray* klasses = [[model class] listComponentsClasses];
+    for (Class k in klasses) {
+        Component* component = [[k alloc] init];
+        [self addComponent:component toModel:model];
+        NSLog(@"Creating component: %@", component);
+    }
+    
+    //
     [self addModel:model];
 }
 

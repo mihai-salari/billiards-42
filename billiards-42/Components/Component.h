@@ -13,6 +13,10 @@
 @interface Component : NSObject
 
 @property (strong) Model *model;
+// following props made to interact with scene
+@property (retain) CCLayer* renderLayer;
+@property cpSpace* physicsSpace;
+
 
 - (id) initWithModel:(Model *) model;
 - (void) startup; // startup hook - runs once - when level is loaded

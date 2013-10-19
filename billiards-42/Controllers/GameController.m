@@ -29,6 +29,16 @@
     [self.modelsManager loadFromJSON:filePath];
 }
 
+// starts everything
+- (void) start {
+    NSMutableArray* components = [self.modelsManager allComponents];
+    for (Component* component in components) {
+        component.renderLayer = self.renderLayer;
+        component.physicsSpace = self.physicsSpace;
+    }
+    [self componentsStartup];
+}
+
 - (void) componentsHookHelper:(NSString *)methodName {
     SEL selector = NSSelectorFromString(methodName);
     NSMutableArray* components = [self.modelsManager allComponents];

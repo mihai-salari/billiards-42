@@ -12,6 +12,8 @@
 @interface GameController : NSObject
 
 @property (strong) ModelsManager *modelsManager; // Controller creates it in init
+@property (retain) CCLayer* renderLayer;
+@property cpSpace* physicsSpace;
 
 - (id) init;
 - (id) initWithJSON:(NSString *) filePath;
@@ -20,6 +22,8 @@
 - (void) componentsStartup;
 - (void) componentsUpdate:(ccTime) delta;
 - (void) componentsBeforeRemove;
+//
+- (void) start; // called by creator, calls componentsStartup
 
 - (void) componentsHookHelper:(NSString *) methodName;
 
