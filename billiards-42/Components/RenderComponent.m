@@ -12,8 +12,29 @@
 
 #import "RenderComponent.h"
 
-@implementation RenderComponent
+@implementation RenderComponent {
+    View* _view;
+}
 
+- (Model<RenderableModel> *) renderableModel {
+    return (Model<RenderableModel>*) self.model;
+}
+
+
+
+- (void) startup{
+    // create view
+    _view = [ViewFactory BuildViewByName:NSStringFromClass(self.model.class)];
+    _view.model = self.renderableModel; // set model ref
+    _view.renderLayer = self.renderLayer; // set layer
+    [_view startup];
+}
+
+- (void) update:(ccTime)delta {
+}
+
+- (void) beforeRemove {
+}
 
 
 @end

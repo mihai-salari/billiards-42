@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Component.h"
+#import "RenderableModel.h"
+#import "ViewFactory.h"
 
 @interface RenderComponent : Component
+
+@property (readonly) Model<RenderableModel>* renderableModel;
+
+
 
 @end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841CA10D18146C66000AC5A2 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA10C18146C66000AC5A2 /* View.m */; };
+		841CA11018146DBA000AC5A2 /* ViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA10F18146DBA000AC5A2 /* ViewFactory.m */; };
+		841CA113181471D0000AC5A2 /* WorldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA112181471D0000AC5A2 /* WorldView.m */; };
+		841CA116181471ED000AC5A2 /* BallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA115181471ED000AC5A2 /* BallView.m */; };
 		84C6440817EAECB900696084 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440717EAECB900696084 /* QuartzCore.framework */; };
 		84C6440A17EAECB900696084 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440917EAECB900696084 /* OpenGLES.framework */; };
 		84C6440C17EAECB900696084 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440B17EAECB900696084 /* OpenAL.framework */; };
@@ -194,6 +198,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		841CA10B18146C66000AC5A2 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = View.h; path = Views/View.h; sourceTree = "<group>"; };
+		841CA10C18146C66000AC5A2 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = View.m; path = Views/View.m; sourceTree = "<group>"; };
+		841CA10E18146DBA000AC5A2 /* ViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewFactory.h; path = Views/ViewFactory.h; sourceTree = "<group>"; };
+		841CA10F18146DBA000AC5A2 /* ViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewFactory.m; path = Views/ViewFactory.m; sourceTree = "<group>"; };
+		841CA111181471D0000AC5A2 /* WorldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldView.h; path = Views/WorldView.h; sourceTree = "<group>"; };
+		841CA112181471D0000AC5A2 /* WorldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorldView.m; path = Views/WorldView.m; sourceTree = "<group>"; };
+		841CA114181471ED000AC5A2 /* BallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BallView.h; path = Views/BallView.h; sourceTree = "<group>"; };
+		841CA115181471ED000AC5A2 /* BallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BallView.m; path = Views/BallView.m; sourceTree = "<group>"; };
 		84C6440417EAECB900696084 /* billiards-42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "billiards-42.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C6440717EAECB900696084 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84C6440917EAECB900696084 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1186,6 +1198,14 @@
 		84C6462417EE265E00696084 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				841CA10B18146C66000AC5A2 /* View.h */,
+				841CA10C18146C66000AC5A2 /* View.m */,
+				841CA10E18146DBA000AC5A2 /* ViewFactory.h */,
+				841CA10F18146DBA000AC5A2 /* ViewFactory.m */,
+				841CA111181471D0000AC5A2 /* WorldView.h */,
+				841CA112181471D0000AC5A2 /* WorldView.m */,
+				841CA114181471ED000AC5A2 /* BallView.h */,
+				841CA115181471ED000AC5A2 /* BallView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1261,6 +1281,7 @@
 				84C6440017EAECB900696084 /* Sources */,
 				84C6440117EAECB900696084 /* Frameworks */,
 				84C6440217EAECB900696084 /* Resources */,
+				841CA11718147824000AC5A2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1323,6 +1344,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		841CA11718147824000AC5A2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84C6440017EAECB900696084 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1349,6 +1386,7 @@
 				84C645F517EAECBB00696084 /* cpSpaceComponent.c in Sources */,
 				84CB537B17F3F88400C01EE5 /* World.m in Sources */,
 				84C6459E17EAECBB00696084 /* ray2.c in Sources */,
+				841CA113181471D0000AC5A2 /* WorldView.m in Sources */,
 				84C6453917EAECBA00696084 /* base64.c in Sources */,
 				84C6445C17EAECB900696084 /* CCActionTween.m in Sources */,
 				84C6449317EAECB900696084 /* CCLabelBMFont.m in Sources */,
@@ -1375,6 +1413,7 @@
 				84C644B217EAECBA00696084 /* CCParticleExamples.m in Sources */,
 				84C644AF17EAECBA00696084 /* CCParticleBatchNode.m in Sources */,
 				84C644F217EAECBA00696084 /* CCTextureAtlas.m in Sources */,
+				841CA10D18146C66000AC5A2 /* View.m in Sources */,
 				8A58A46D17F948E500F1B302 /* CreditsScene.m in Sources */,
 				84C645A017EAECBB00696084 /* utility.c in Sources */,
 				84C6454C17EAECBA00696084 /* CCVertex.m in Sources */,
@@ -1418,6 +1457,7 @@
 				84C6459017EAECBB00696084 /* mat4stack.c in Sources */,
 				84C645DB17EAECBB00696084 /* cpRotaryLimitJoint.c in Sources */,
 				84C644EC17EAECBA00696084 /* CCSpriteFrameCache.m in Sources */,
+				841CA11018146DBA000AC5A2 /* ViewFactory.m in Sources */,
 				84C6447517EAECB900696084 /* CCDirector.m in Sources */,
 				84C6446517EAECB900696084 /* CCAtlasNode.m in Sources */,
 				84C6452917EAECBA00696084 /* CCTouchHandler.m in Sources */,
@@ -1426,6 +1466,7 @@
 				84C6452217EAECBA00696084 /* CCGLView.m in Sources */,
 				84C6454F17EAECBA00696084 /* CGPointExtension.m in Sources */,
 				84C6445317EAECB900696084 /* CCActionPageTurn3D.m in Sources */,
+				841CA116181471ED000AC5A2 /* BallView.m in Sources */,
 				84C645E917EAECBB00696084 /* cpBody.c in Sources */,
 				84C645A417EAECBB00696084 /* vec3.c in Sources */,
 				84C6455617EAECBA00696084 /* TGAlib.m in Sources */,

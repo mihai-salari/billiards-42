@@ -48,6 +48,7 @@
         _componentsByClass[NSStringFromClass([component class])] = components;
     }
     components[@(model.mid)] = component; // this maybe redundant
+    component.model = model;
     [model addComponent:component];
     [_components addObject:component]; // this IS redundant, but allows us to search fast and easy
 }
