@@ -39,6 +39,10 @@
     [self componentsStartup];
 }
 
+- (void) update:(ccTime)delta {
+    [self componentsUpdate:delta];
+}
+
 - (void) componentsHookHelper:(NSString *)methodName {
     SEL selector = NSSelectorFromString(methodName);
     NSMutableArray* components = [self.modelsManager allComponents];

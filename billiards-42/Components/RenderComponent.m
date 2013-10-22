@@ -20,8 +20,6 @@
     return (Model<RenderableModel>*) self.model;
 }
 
-
-
 - (void) startup{
     // create view
     _view = [ViewFactory BuildViewByName:NSStringFromClass(self.model.class)];
@@ -31,9 +29,11 @@
 }
 
 - (void) update:(ccTime)delta {
+    [_view update:delta];
 }
 
 - (void) beforeRemove {
+    [_view beforeRemove];
 }
 
 

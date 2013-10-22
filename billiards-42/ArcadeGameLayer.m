@@ -72,6 +72,8 @@ enum {
 		[self addNewSpriteAtPosition:ccp(200,200)];
 		*/
         
+        [self setScale:0.5f];
+        
         [self createController];
         
 		[self scheduleUpdate];
@@ -148,6 +150,8 @@ enum {
 	for(int i=0; i<steps; i++){
 		cpSpaceStep(_space, dt);
 	}
+    
+    [_controller update:delta];
 }
 
 -(void) createMenu

@@ -19,5 +19,7 @@
 @property (retain) CCLayer* renderLayer;
 
 - (void) startup;
+- (void) update:(ccTime) delta; // update
+- (void) beforeRemove;
 
 @end

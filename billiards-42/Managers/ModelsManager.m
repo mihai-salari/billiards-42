@@ -22,6 +22,10 @@
         _components = [NSMutableArray array]; // to iterate easily through all components in game
         _componentsByClass = [NSMutableDictionary dictionary];
         _lowestUnassignedMid = 1;
+        
+        [_models retain]; // TODO: remove this in ARC mode... and we need ARC!
+        [_components retain];
+        [_componentsByClass retain];
     }
     return self;
 }
@@ -100,7 +104,7 @@
 - (void) createModelFromJson:(NSDictionary*) jsonDict {
     NSLog(@"Loading model from JSON: %@", jsonDict);
     Model* model = [ModelFactory BuildUsingJSON:jsonDict];
-    // TODO: create components here
+
     NSArray* klasses = [[model class] listComponentsClasses];
     for (Class k in klasses) {
         Component* component = [[k alloc] init];

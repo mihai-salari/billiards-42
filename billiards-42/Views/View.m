@@ -10,4 +10,16 @@
 
 @implementation View
 
+- (void) startup {
+    // TODO: add Not Implemented exception here?
+}
+
+- (void) update:(ccTime) delta {
+    
+}
+
+- (void) beforeRemove {
+    
+}
+
 @end

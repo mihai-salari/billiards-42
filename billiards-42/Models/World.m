@@ -27,7 +27,7 @@
 
 - (CGPoint) getPosition
 {
-    return CGPointMake(0, 0);
+    return CGPointMake(0 ,0);
 }
 
 - (void) loadFromJSON:(NSDictionary *)jsonDict {
