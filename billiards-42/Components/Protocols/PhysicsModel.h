@@ -13,5 +13,7 @@
 
 - (cpBody*) getBody;
 - (void) setBody:(cpBody*) body;
+- (cpShape*) getShape;
+- (CGPoint) getPosition;
 
 @end

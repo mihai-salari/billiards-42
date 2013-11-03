@@ -99,8 +99,9 @@ enum {
 	
 	_space = cpSpaceNew();
 	
-	cpSpaceSetGravity( _space, cpv(0, -100) );
+	cpSpaceSetGravity( _space, cpvzero ); // zero gravity
 	
+    /*
 	//
 	// rogue shapes
 	// We have to free them manually
@@ -121,20 +122,20 @@ enum {
 		cpShapeSetElasticity( _walls[i], 1.0f );
 		cpShapeSetFriction( _walls[i], 1.0f );
 		cpSpaceAddStaticShape(_space, _walls[i] );
-	}
+	}*/
 	
 	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:_space];
-	_debugLayer.visible = NO;
+	_debugLayer.visible = YES;//NO;
 	[self addChild:_debugLayer z:100];
 }
 
 - (void)dealloc
 {
-	// manually Free rogue shapes
+	/*// manually Free rogue shapes
 	for( int i=0;i<4;i++) {
 		cpShapeFree( _walls[i] );
 	}
-	
+	*/
 	cpSpaceFree( _space );
 	
 	[super dealloc];
@@ -257,7 +258,7 @@ enum {
 		
 		location = [[CCDirector sharedDirector] convertToGL: location];
 		
-		[self addNewSpriteAtPosition: location];
+		//[self addNewSpriteAtPosition: location];
 	}
 }
 

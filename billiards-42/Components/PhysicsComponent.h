@@ -7,7 +7,10 @@
 //
 
 #import "Component.h"
+#import "PhysicsModel.h"
 
 @interface PhysicsComponent : Component
+
+@property (readonly) Model<PhysicsModel>* physicalModel;
 
 @end

@@ -51,14 +51,21 @@
     return _cpBody;
 }
 
+- (cpBody *) getShape{
+    if( _cpShape == nil ) [self _createBody];
+    return _cpShape;
+}
+
 - (void) setBody:(cpBody *)body {
     _cpBody = body;
 }
 
 
 - (void) _createBody {
-    _cpBody = cpBodyNewStatic(); // walls are static bodies
+    _cpBody = cpBodyNew(1.0f, cpMomentForCircle(1.0f, 0, self.radius, cpvzero));
     _cpShape = cpCircleShapeNew(_cpBody, self.radius, cpvzero);
+    cpShapeSetElasticity( _cpShape, 0.5f );
+	cpShapeSetFriction( _cpShape, 0.5f );
 }
 
 // load

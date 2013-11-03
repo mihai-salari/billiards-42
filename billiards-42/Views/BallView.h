@@ -10,4 +10,6 @@
 
 @interface BallView : View
 
+@property (retain) CCPhysicsSprite* sprite;
+
 @end

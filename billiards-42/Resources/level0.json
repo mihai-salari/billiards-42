@@ -13,10 +13,19 @@
 		{
 			"class":"Ball",
 			"position": {
-				"x": 960,
-				"y": 640
+				"x": 100,
+				"y": 100
 			},
-			"radius": 31
-		}
+			"radius": 16
+		},
+        {
+           "class":"Ball",
+           "position": {
+           "x": 200,
+           "y": 100
+           },
+           "radius": 16
+        }
+           
 	]
 }
