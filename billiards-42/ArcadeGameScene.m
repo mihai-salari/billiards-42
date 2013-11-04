@@ -14,6 +14,8 @@
     self = [super init];
     if (self != nil) {
         arcadeGameLayer = [ArcadeGameLayer node];
+        [arcadeGameLayer setPosition:CGPointZero];
+        [arcadeGameLayer setAnchorPoint:CGPointZero];
         [self addChild:arcadeGameLayer];
     }
     return self;

@@ -16,10 +16,13 @@
 
 - (void) startup{
     cpBody* body = [self.physicalModel getBody];
-    CGPoint pos = [self.physicalModel getPosition];
-    cpBodySetPos(body, cpv( pos.x, pos.y ));
+    
     cpSpaceAddShape(self.physicsSpace, [self.physicalModel getShape] );
-    cpSpaceAddBody(self.physicsSpace, body);
+    if( ! cpBodyIsStatic(body) ) { // dont add static bodies
+        CGPoint pos = [self.physicalModel getPosition];
+        cpBodySetPos(body, cpv( pos.x, pos.y ));
+        cpSpaceAddBody(self.physicsSpace, body);
+    }
     
 }
 

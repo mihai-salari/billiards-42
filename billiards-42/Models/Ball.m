@@ -51,7 +51,7 @@
     return _cpBody;
 }
 
-- (cpBody *) getShape{
+- (cpShape *) getShape{
     if( _cpShape == nil ) [self _createBody];
     return _cpShape;
 }

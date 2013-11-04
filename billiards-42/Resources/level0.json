@@ -10,19 +10,67 @@
 			},
 			"background": "level0.png"
 		},
+        {
+           "class":"Wall",
+           "start": {
+                "x": 67,
+                "y": 1075
+           
+           },
+           "end": {
+                "x":1836,
+                "y":1075
+           }
+        },
+           {
+           "class":"Wall",
+           "start": {
+            "x": 76,
+            "y": 885
+           
+           },
+           "end": {
+            "x":1825,
+            "y":255
+           }
+           },
+         {
+           "class":"Wall",
+           "start": {
+            "x": 1830,
+            "y": 1063
+           
+           },
+           "end": {
+            "x":1830,
+            "y":255
+           }
+        },
+        {
+           "class":"Wall",
+           "start": {
+            "x": 75,
+            "y": 1120
+           
+           },
+           "end": {
+            "x":75,
+            "y":890
+           }
+        },
 		{
 			"class":"Ball",
 			"position": {
-				"x": 100,
-				"y": 100
+				"x": 480,
+				"y": 480
 			},
 			"radius": 16
 		},
         {
            "class":"Ball",
            "position": {
-           "x": 200,
-           "y": 100
+           "x": 320,
+           "y": 480
            },
            "radius": 16
         }

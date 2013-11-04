@@ -8,6 +8,7 @@
 
 #import "Wall.h"
 #import "PhysicsComponent.h"
+#import "ModelFactory.h"
 
 @implementation Wall
 
@@ -34,10 +35,27 @@
     _cpBody = body; // TODO: maybe through exception for wall in this method?
 }
 
+- (cpShape *) getShape{
+    if( _cpShape == nil ) [self _createBody];
+    return _cpShape;
+}
+
+- (CGPoint) getPosition
+{
+    return self.start;
+}
 
 - (void) _createBody {
     _cpBody = cpBodyNewStatic(); // walls are static bodies
-    _cpShape = cpSegmentShapeNew(_cpBody, cpv(self.start.x, self.start.y) , cpv(self.end.x, self.end.y) , 1); // and add shape to body
+    _cpShape = cpSegmentShapeNew(_cpBody, cpv(self.start.x / 2.0f, self.start.y / 2.0f) , cpv(self.end.x / 2.0f, self.end.y / 2.0f) , 2); // and add shape to body
+}
+
+
+// load
+
+- (void) loadFromJSON:(NSDictionary *)jsonDict {
+    self.start = [ModelFactory CGPointFromJSON:jsonDict[@"start"]];
+    self.end = [ModelFactory CGPointFromJSON:jsonDict[@"end"]];
 }
 
 @end
