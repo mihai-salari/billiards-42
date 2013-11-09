@@ -21,7 +21,6 @@
     
     self.model.node = self.sprite; //save sprite back to model
    
-    //sprite.anchorPoint = CGPointMake(0.0f, 0.0f);
     [self.renderLayer addChild:self.sprite];
 }
 

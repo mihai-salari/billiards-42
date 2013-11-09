@@ -8,12 +8,13 @@
 
 #import "World.h"
 #import "RenderComponent.h"
+#import "ZoomAndPanComponent.h"
 #import "ModelFactory.h"
 
 @implementation World
 
 + (NSArray *) listComponentsClasses {
-    return [NSArray arrayWithObject:[RenderComponent class]];
+    return [NSArray arrayWithObjects:[RenderComponent class],[ZoomAndPanComponent class],nil];
 }
 
 - (CGSize) getSize{

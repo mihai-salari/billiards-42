@@ -14,8 +14,11 @@
     self = [super init];
     if (self != nil) {
         arcadeGameLayer = [ArcadeGameLayer node];
-        [arcadeGameLayer setPosition:CGPointZero];
-        [arcadeGameLayer setAnchorPoint:CGPointZero];
+        
+        CGSize size = [CCDirector sharedDirector].winSize;
+        [arcadeGameLayer setPosition:CGPointMake(- size.width/4 , -size.height/4) ]; // TODO: support non-retina
+        
+        //[arcadeGameLayer setAnchorPoint:CGPointZero];
         [self addChild:arcadeGameLayer];
     }
     return self;

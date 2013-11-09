@@ -9,8 +9,12 @@
 #import "Component.h"
 #import "RenderableModel.h"
 
-@interface ZoomAndPanComponent : Component
+@interface ZoomAndPanComponent : Component <UIGestureRecognizerDelegate>
 
 @property (readonly) Model<RenderableModel>* renderableModel;
+
+@property CGFloat minZoom;
+@property CGFloat maxZoom;
+
 
 @end

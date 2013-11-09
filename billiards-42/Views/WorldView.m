@@ -14,8 +14,9 @@
     // creates sprite on layer
     NSLog(@"WordView startup method call!");
     CCSprite* sprite = [CCSprite spriteWithTexture: [self.model getTexture]];
-    sprite.anchorPoint = CGPointMake(0.0f, 0.0f);
+    
     sprite.position = [self.model getPosition];
+    sprite.anchorPoint = CGPointZero;
     
     self.model.node = sprite; //save sprite back to model
     
