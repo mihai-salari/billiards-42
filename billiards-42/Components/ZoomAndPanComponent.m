@@ -17,7 +17,7 @@
 
 - (void) startup{
     // save min zoom (initial)
-    self.minZoom = self.renderLayer.scale;
+    self.minZoom = 0.5f; //self.renderLayer.scale;
     self.maxZoom = 2.0f; // hardcoded max zoom to x2
     //! pinch gesture recognizer
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
@@ -63,6 +63,7 @@
         if( newScale < self.minZoom ) newScale = self.minZoom;
         
         self.renderLayer.scale = newScale;
+        //NSLog(@"Scale %f",self.renderLayer.scale);
         aPinchGestureRecognizer.scale = 1;
         [self positionLayerSafe:CGPointZero]; // to fix bounds
     }

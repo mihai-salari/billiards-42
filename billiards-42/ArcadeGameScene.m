@@ -16,9 +16,9 @@
         arcadeGameLayer = [ArcadeGameLayer node];
         
         CGSize size = [CCDirector sharedDirector].winSize;
-        [arcadeGameLayer setPosition:CGPointMake(- size.width/4 , -size.height/4) ]; // TODO: support non-retina
+        [arcadeGameLayer setPosition:CGPointMake(- size.width/2 , -size.height/2) ]; // TODO: support non-retina
         
-        //[arcadeGameLayer setAnchorPoint:CGPointZero];
+        [arcadeGameLayer setAnchorPoint:CGPointMake(1.0f, 1.0f)];
         [self addChild:arcadeGameLayer];
     }
     return self;
