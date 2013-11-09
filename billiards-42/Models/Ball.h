@@ -15,6 +15,7 @@
     cpShape * _cpShape;
 }
 
+@property (nonatomic,retain) CCNode* node;
 @property CGPoint position; // ball position
 @property CGFloat radius; // ball radius
 
