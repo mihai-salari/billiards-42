@@ -11,6 +11,8 @@
 		841CA11018146DBA000AC5A2 /* ViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA10F18146DBA000AC5A2 /* ViewFactory.m */; };
 		841CA113181471D0000AC5A2 /* WorldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA112181471D0000AC5A2 /* WorldView.m */; };
 		841CA116181471ED000AC5A2 /* BallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA115181471ED000AC5A2 /* BallView.m */; };
+		841CA11B182D83A8000AC5A2 /* CCNode+SFGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA11A182D83A8000AC5A2 /* CCNode+SFGestureRecognizers.m */; };
+		841CA11E182D9BA9000AC5A2 /* ZoomAndPanComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA11D182D9BA9000AC5A2 /* ZoomAndPanComponent.m */; };
 		84C6440817EAECB900696084 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440717EAECB900696084 /* QuartzCore.framework */; };
 		84C6440A17EAECB900696084 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440917EAECB900696084 /* OpenGLES.framework */; };
 		84C6440C17EAECB900696084 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440B17EAECB900696084 /* OpenAL.framework */; };
@@ -206,6 +208,10 @@
 		841CA112181471D0000AC5A2 /* WorldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorldView.m; path = Views/WorldView.m; sourceTree = "<group>"; };
 		841CA114181471ED000AC5A2 /* BallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BallView.h; path = Views/BallView.h; sourceTree = "<group>"; };
 		841CA115181471ED000AC5A2 /* BallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BallView.m; path = Views/BallView.m; sourceTree = "<group>"; };
+		841CA119182D83A8000AC5A2 /* CCNode+SFGestureRecognizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+SFGestureRecognizers.h"; sourceTree = "<group>"; };
+		841CA11A182D83A8000AC5A2 /* CCNode+SFGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+SFGestureRecognizers.m"; sourceTree = "<group>"; };
+		841CA11C182D9BA9000AC5A2 /* ZoomAndPanComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZoomAndPanComponent.h; path = Components/ZoomAndPanComponent.h; sourceTree = "<group>"; };
+		841CA11D182D9BA9000AC5A2 /* ZoomAndPanComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZoomAndPanComponent.m; path = Components/ZoomAndPanComponent.m; sourceTree = "<group>"; };
 		84C6440417EAECB900696084 /* billiards-42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "billiards-42.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C6440717EAECB900696084 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84C6440917EAECB900696084 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -607,6 +613,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841CA118182D83A8000AC5A2 /* CCNode+SFGestureRecognizers */ = {
+			isa = PBXGroup;
+			children = (
+				841CA119182D83A8000AC5A2 /* CCNode+SFGestureRecognizers.h */,
+				841CA11A182D83A8000AC5A2 /* CCNode+SFGestureRecognizers.m */,
+			);
+			path = "CCNode+SFGestureRecognizers";
+			sourceTree = "<group>";
+		};
 		84C643FB17EAECB900696084 = {
 			isa = PBXGroup;
 			children = (
@@ -644,6 +659,7 @@
 		84C6441B17EAECB900696084 /* billiards-42 */ = {
 			isa = PBXGroup;
 			children = (
+				841CA118182D83A8000AC5A2 /* CCNode+SFGestureRecognizers */,
 				8AC42FCC17F153D6006479E9 /* Scenes */,
 				84C6462517EE266B00696084 /* Controllers */,
 				84C6462417EE265E00696084 /* Views */,
@@ -1180,6 +1196,8 @@
 				84C6461E17EE259700696084 /* RenderComponent.m */,
 				84CB538517F6D03800C01EE5 /* PhysicsComponent.h */,
 				84CB538617F6D03800C01EE5 /* PhysicsComponent.m */,
+				841CA11C182D9BA9000AC5A2 /* ZoomAndPanComponent.h */,
+				841CA11D182D9BA9000AC5A2 /* ZoomAndPanComponent.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1447,6 +1465,7 @@
 				84C6445617EAECB900696084 /* CCActionProgressTimer.m in Sources */,
 				84C6443817EAECB900696084 /* CCAction.m in Sources */,
 				84C6461017EAECBB00696084 /* IntroLayer.m in Sources */,
+				841CA11E182D9BA9000AC5A2 /* ZoomAndPanComponent.m in Sources */,
 				84C6457017EAECBA00696084 /* CocosDenshion.m in Sources */,
 				84C644F517EAECBA00696084 /* CCTextureCache.m in Sources */,
 				84C6459817EAECBB00696084 /* neon_matrix_impl.c in Sources */,
@@ -1514,6 +1533,7 @@
 				84C6453017EAECBA00696084 /* CCEventDispatcher.m in Sources */,
 				84C644E617EAECBA00696084 /* CCSpriteBatchNode.m in Sources */,
 				84C6446F17EAECB900696084 /* CCConfiguration.m in Sources */,
+				841CA11B182D83A8000AC5A2 /* CCNode+SFGestureRecognizers.m in Sources */,
 				84C644CB17EAECBA00696084 /* CCScheduler.m in Sources */,
 				84C6451B17EAECBA00696084 /* CCDirectorIOS.m in Sources */,
 				84C6449D17EAECBA00696084 /* CCMenu.m in Sources */,

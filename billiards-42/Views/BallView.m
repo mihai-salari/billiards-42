@@ -18,6 +18,9 @@
     cpBody* body = [((Model<PhysicsModel>*)self.model) getBody];
     [self.sprite setCPBody:body];
     self.sprite.position = [self.model getPosition];
+    
+    self.model.node = self.sprite; //save sprite back to model
+   
     //sprite.anchorPoint = CGPointMake(0.0f, 0.0f);
     [self.renderLayer addChild:self.sprite];
 }
