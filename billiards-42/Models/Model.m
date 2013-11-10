@@ -18,7 +18,8 @@
 
 - (id)init {
     if((self = [super init])) {
-        self->_components = [NSMutableArray array];
+        _components = [NSMutableArray array];
+        [_components retain];
     }
     return self;
 }
@@ -27,6 +28,7 @@
     if((self = [super init])) {
         self->_mid = mid;
         self->_components = [NSMutableArray array];
+        [_components retain];
     }
     return self;
 }
