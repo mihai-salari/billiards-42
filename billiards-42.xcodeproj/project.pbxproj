@@ -193,6 +193,7 @@
 		84CB539617F8C54500C01EE5 /* ModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB539517F8C54500C01EE5 /* ModelFactory.m */; };
 		8A58A46D17F948E500F1B302 /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A58A46C17F948E500F1B302 /* CreditsScene.m */; };
 		8A58A47017F9490600F1B302 /* CreditsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A58A46F17F9490600F1B302 /* CreditsLayer.m */; };
+		8AB9CA95182FB3C800476CF4 /* CirclePrimitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9CA94182FB3C800476CF4 /* CirclePrimitive.m */; };
 		8AC42FCB17F1521F006479E9 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FCA17F1521F006479E9 /* GameManager.m */; };
 		8AC42FCF17F1595B006479E9 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FCE17F1595B006479E9 /* MenuScene.m */; };
 		8AC42FD217F1599C006479E9 /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FD117F1599C006479E9 /* MenuLayer.m */; };
@@ -582,6 +583,8 @@
 		8A58A46C17F948E500F1B302 /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsScene.m; sourceTree = "<group>"; };
 		8A58A46E17F9490600F1B302 /* CreditsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsLayer.h; sourceTree = "<group>"; };
 		8A58A46F17F9490600F1B302 /* CreditsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsLayer.m; sourceTree = "<group>"; };
+		8AB9CA93182FB3C800476CF4 /* CirclePrimitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CirclePrimitive.h; sourceTree = "<group>"; };
+		8AB9CA94182FB3C800476CF4 /* CirclePrimitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CirclePrimitive.m; sourceTree = "<group>"; };
 		8AC42FC917F1521F006479E9 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		8AC42FCA17F1521F006479E9 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		8AC42FCD17F1595B006479E9 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
@@ -1224,6 +1227,8 @@
 				841CA112181471D0000AC5A2 /* WorldView.m */,
 				841CA114181471ED000AC5A2 /* BallView.h */,
 				841CA115181471ED000AC5A2 /* BallView.m */,
+				8AB9CA93182FB3C800476CF4 /* CirclePrimitive.h */,
+				8AB9CA94182FB3C800476CF4 /* CirclePrimitive.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1524,6 +1529,7 @@
 				84C645CB17EAECBB00696084 /* cpConstraint.c in Sources */,
 				84C6460A17EAECBB00696084 /* AppDelegate.m in Sources */,
 				84C644E017EAECBA00696084 /* ccShaders.m in Sources */,
+				8AB9CA95182FB3C800476CF4 /* CirclePrimitive.m in Sources */,
 				84C645C717EAECBB00696084 /* chipmunk.c in Sources */,
 				84C6453617EAECBA00696084 /* CCWindow.m in Sources */,
 				84C6451417EAECBA00696084 /* cocos2d.m in Sources */,

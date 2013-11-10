@@ -252,8 +252,7 @@ enum {
 	[sprite setPosition: pos];
 }
 
-- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *myTouch = [touches anyObject];
     CGPoint location = [myTouch locationInView:[myTouch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
@@ -262,14 +261,62 @@ enum {
         if ([object isMemberOfClass:[Ball class]]){
             Ball * ball = (Ball*)object;
             if (CGRectContainsPoint(ball.getNode.boundingBox, location)){
-                cpBodyApplyImpulse(ball.getBody,
-                                   cpv(100.0, 150.0),
-                                   cpv(10.0, 15.0));
-                NSLog(@"Ball touched");
+                [ball touchStarted];
+                _touched_ball = ball;
+                NSLog(@"Ball touche began coordinates x = %f, y = %f", location.x, location.y);
             }
         }
     }
 }
+
+- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"Touch ended");
+    
+    if (_touched_ball == NULL) return;
+    
+    UITouch *myTouch = [touches anyObject];
+    CGPoint location = [myTouch locationInView:[myTouch view]];
+    location = [[CCDirector sharedDirector] convertToGL:location];
+    location = [self convertToNodeSpace:location];
+    [[_touched_ball getNode] removeChildByTag:100 ];
+    cpVect impulse = cpv((_touched_ball.getNode.position.x - location.x)*2, (_touched_ball.getNode.position.y - location.y)*2);
+    cpBodyApplyImpulse(_touched_ball.getBody, impulse, cpv(0.0, 0.0));
+    _touched_ball = NULL;
+    
+}
+
+-(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (_touched_ball == NULL) return;
+    
+    //ccDrawLine(CGPointMake(0, 0), CGPointMake(100, 100));
+    UITouch *myTouch = [touches anyObject];
+    CGPoint location = [myTouch locationInView:[myTouch view]];
+    location = [[CCDirector sharedDirector] convertToGL:location];
+    location = [self convertToNodeSpace:location];
+    NSLog(@"Touch moved coordinates x = %f, y = %f", location.x, location.y);
+    [_touched_ball touchMoved:(CGPoint) location];
+    
+}
+
+//- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//    
+//    
+//    UITouch *myTouch = [touches anyObject];
+//    CGPoint location = [myTouch locationInView:[myTouch view]];
+//    location = [[CCDirector sharedDirector] convertToGL:location];
+//    b2Vec2 locationWorld = b2Vec2(location.x/PTM_RATIO, location.y/PTM_RATIO);
+//    
+//    b2Vec2 impulse = b2Vec2((body->GetPosition().x - location.x/PTM_RATIO)*100, (body->GetPosition().y - location.y/PTM_RATIO)*100);
+//    
+//    
+//    body->ApplyLinearImpulse(impulse, locationWorld);
+//    
+//    isTouched = FALSE;
+//    [self removeChild:circle cleanup:TRUE];
+//    circle = NULL;
+//}
+
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
 {

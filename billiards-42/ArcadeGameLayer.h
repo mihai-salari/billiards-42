@@ -15,6 +15,7 @@
 #import "chipmunk.h"
 
 #import "GameController.h"
+#import "Ball.h"
 
 @interface ArcadeGameLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
@@ -26,6 +27,7 @@
 	cpShape *_walls[4];
     
     GameController *_controller;
+    Ball * _touched_ball;
 }
 
 @end

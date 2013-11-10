@@ -9,12 +9,15 @@
 #import "Model.h"
 #import "RenderableModel.h"
 #import "PhysicsModel.h"
+#import "CirclePrimitive.h"
 
 @interface Ball : Model  <RenderableModel, PhysicsModel> {
     cpBody * _cpBody;
     cpShape * _cpShape;
+    CirclePrimitive* circle;
 }
-
+- (void)touchStarted;
+- (void)touchMoved:(CGPoint) touch;
 
 @property CGPoint position; // ball position
 @property CGFloat radius; // ball radius
