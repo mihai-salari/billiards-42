@@ -48,6 +48,7 @@
 - (void) _createBody {
     _cpBody = cpBodyNewStatic(); // walls are static bodies
     _cpShape = cpSegmentShapeNew(_cpBody, cpv(self.start.x / 2.0f, self.start.y / 2.0f) , cpv(self.end.x / 2.0f, self.end.y / 2.0f) , 2); // and add shape to body
+    cpShapeSetElasticity( _cpShape, 0.5f );
 }
 
 
