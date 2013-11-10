@@ -15,6 +15,6 @@
 
 @property (readonly) Model<RenderableModel>* renderableModel;
 
-
+- (View*) getView;
 
 @end

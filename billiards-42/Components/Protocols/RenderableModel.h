@@ -11,7 +11,7 @@
 
 @protocol RenderableModel <NSObject>
 
-@property (nonatomic,retain) CCNode* node; // property to save node - for RenderComponent
+@property (readonly) CCNode* node; // property to get node
 
 - (CCTexture2D *) getTexture;
 - (CGSize) getSize;

@@ -36,5 +36,9 @@
     [_view beforeRemove];
 }
 
+- (View*) getView {
+    return _view;
+}
+
 
 @end

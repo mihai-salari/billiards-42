@@ -7,16 +7,26 @@
 //
 
 #import "Model.h"
+#import "Component.h"
+#import "RenderComponent.h"
+#import "View.h"
 
 @implementation Model {
     uint32_t _mid;
     NSMutableArray* _components;
 }
 
+- (id)init {
+    if((self = [super init])) {
+        self->_components = [NSMutableArray array];
+    }
+    return self;
+}
+
 - (id)initWithMid:(uint32_t)mid {
     if((self = [super init])) {
-        _mid = mid;
-        _components = [NSMutableArray array];
+        self->_mid = mid;
+        self->_components = [NSMutableArray array];
     }
     return self;
 }
@@ -44,6 +54,15 @@
 - (void) loadFromJSON:(NSDictionary *)jsonDict {
     // empty here - override in child classes
     // TODO: maybe through NotImplementedException???
+}
+
+- (CCNode*) getNode {
+    RenderComponent* renderComponent = (RenderComponent*) [self getComponentOfClass:[RenderComponent class] ];
+    if( renderComponent ) {
+        View* view = [renderComponent getView];
+        return view.node; // get node from view
+    }
+    return nil;
 }
 
 + (NSArray*) listComponentsClasses {

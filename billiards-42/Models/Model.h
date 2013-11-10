@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
 @interface Model : NSObject
 
@@ -18,6 +19,10 @@
 - (void) loadFromJSON:( NSDictionary* ) jsonDict;
 
 + (NSArray*) listComponentsClasses; // returns list of components
+
+- (CCNode*) getNode;
+
+@property (readonly, getter = getNode) CCNode* node; //getter for node
 
 
 @end

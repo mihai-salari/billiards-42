@@ -19,8 +19,7 @@
     [self.sprite setCPBody:body];
     self.sprite.position = [self.model getPosition];
     
-    self.model.node = self.sprite; //save sprite back to model
-   
+    self.node = self.sprite; // sprite is out main node   
     [self.renderLayer addChild:self.sprite];
 }
 

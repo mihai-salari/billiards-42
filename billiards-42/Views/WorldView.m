@@ -18,7 +18,7 @@
     sprite.position = [self.model getPosition];
     sprite.anchorPoint = CGPointZero;
     
-    self.model.node = sprite; //save sprite back to model
+    self.node = sprite; //save sprite back to model
     
     [self.renderLayer addChild:sprite];
 }
