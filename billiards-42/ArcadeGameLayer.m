@@ -12,6 +12,7 @@
 #import "ArcadeGameLayer.h"
 #import "GameManager.h"
 #import "ArcadeGameScene.h"
+#import "Ball.h"
 
 enum {
 	kTagParentNode = 1,
@@ -253,13 +254,21 @@ enum {
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	for( UITouch *touch in touches ) {
-		CGPoint location = [touch locationInView: [touch view]];
-		
-		location = [[CCDirector sharedDirector] convertToGL: location];
-		
-		//[self addNewSpriteAtPosition: location];
-	}
+    UITouch *myTouch = [touches anyObject];
+    CGPoint location = [myTouch locationInView:[myTouch view]];
+    location = [[CCDirector sharedDirector] convertToGL:location];
+    location = [self convertToNodeSpace:location];
+    for (id object in [_controller.modelsManager allModels ]) {
+        if ([object isMemberOfClass:[Ball class]]){
+            Ball * ball = (Ball*)object;
+            if (CGRectContainsPoint(ball.getNode.boundingBox, location)){
+                cpBodyApplyImpulse(ball.getBody,
+                                   cpv(100.0, 150.0),
+                                   cpv(10.0, 15.0));
+                NSLog(@"Ball touched");
+            }
+        }
+    }
 }
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration

@@ -61,6 +61,10 @@
     return _components;
 }
 
+- (NSMutableArray*) allModels {
+    return _models;
+}
+
 - (Component *) getComponentOfClass:(Class)class forModel:(Model *)model {
     return _componentsByClass[NSStringFromClass(class)][@(model.mid)];
 }
