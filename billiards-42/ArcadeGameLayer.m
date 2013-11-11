@@ -263,6 +263,7 @@ enum {
             if (CGRectContainsPoint(ball.getNode.boundingBox, location)){
                 [ball touchStarted];
                 _touched_ball = ball;
+                [_controller disableZoomAndPan]; // to prevent conflict
                 NSLog(@"Ball touche began coordinates x = %f, y = %f", location.x, location.y);
             }
         }
@@ -283,7 +284,7 @@ enum {
     cpVect impulse = cpv((_touched_ball.getNode.position.x - location.x)*2, (_touched_ball.getNode.position.y - location.y)*2);
     cpBodyApplyImpulse(_touched_ball.getBody, impulse, cpv(0.0, 0.0));
     _touched_ball = NULL;
-    
+    [_controller enableZoomAndPan];
 }
 
 -(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {

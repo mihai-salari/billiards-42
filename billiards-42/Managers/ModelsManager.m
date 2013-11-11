@@ -14,6 +14,7 @@
     NSMutableDictionary * _componentsByClass;
     NSMutableArray * _components;
     uint32_t _lowestUnassignedMid;
+    World* _world;
 }
 
 - (id) init {
@@ -22,7 +23,7 @@
         _components = [NSMutableArray array]; // to iterate easily through all components in game
         _componentsByClass = [NSMutableDictionary dictionary];
         _lowestUnassignedMid = 1;
-        
+        _world = nil;
         [_models retain]; // TODO: remove this in ARC mode... and we need ARC!
         [_components retain];
         [_componentsByClass retain];
@@ -129,5 +130,17 @@
         }
     }
 }*/ // Ray does some freaky stuff here
+
+- (World*) world {
+    if ( ! _world) {
+        for (id object in [self allModels ]) {
+            if ([object isMemberOfClass:[World class]]){
+                _world = (World*)object;
+                [_world retain];
+            }
+        }
+    }
+    return _world;
+}
 
 @end

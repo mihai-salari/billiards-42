@@ -7,6 +7,7 @@
 //
 
 #import "GameController.h"
+#import "ZoomAndPanComponent.h"
 
 @implementation GameController
 
@@ -67,6 +68,16 @@
     for (Component* component in components) {
         [component update:delta];
     }
+}
+
+- (void) enableZoomAndPan {
+    ZoomAndPanComponent* zoomAndPan = (ZoomAndPanComponent*)[_modelsManager.world getComponentOfClass:[ZoomAndPanComponent class]];
+    [zoomAndPan enable];
+}
+
+- (void) disableZoomAndPan {
+    ZoomAndPanComponent* zoomAndPan = (ZoomAndPanComponent*)[_modelsManager.world getComponentOfClass:[ZoomAndPanComponent class]];
+    [zoomAndPan disable];
 }
 
 @end

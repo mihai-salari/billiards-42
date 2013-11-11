@@ -16,5 +16,7 @@
 @property CGFloat minZoom;
 @property CGFloat maxZoom;
 
+- (void) disable;
+- (void) enable;
 
 @end

@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "Component.h"
 #import "Model.h"
+#import "World.h"
 
 @interface ModelsManager : NSObject
+
+@property (readonly) World* world;
 
 - (uint32_t) generateNewMid;
 - (void) addModel:(Model *) model;

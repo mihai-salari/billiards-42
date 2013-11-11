@@ -9,28 +9,33 @@
 #import "ZoomAndPanComponent.h"
 #import "CCNode+SFGestureRecognizers.h"
 
-@implementation ZoomAndPanComponent
+@implementation ZoomAndPanComponent {
+    BOOL _enabled;
+    UIPinchGestureRecognizer* _pinchGestureRecognizer;
+    UIGestureRecognizer* _panGestureRecognizer;
+}
 
 - (Model<RenderableModel> *) renderableModel {
     return (Model<RenderableModel>*) self.model;
 }
 
 - (void) startup{
+    _enabled = YES;
     // save min zoom (initial)
     self.minZoom = 0.5f; //self.renderLayer.scale;
     self.maxZoom = 2.0f; // hardcoded max zoom to x2
     //! pinch gesture recognizer
-    UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
+    _pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
     self.renderableModel.node.isTouchEnabled = YES;
-    [self.renderableModel.node addGestureRecognizer:pinchGestureRecognizer];
-    pinchGestureRecognizer.delegate = self;
-    [pinchGestureRecognizer release];
+    [self.renderableModel.node addGestureRecognizer:_pinchGestureRecognizer];
+    _pinchGestureRecognizer.delegate = self;
+    [_pinchGestureRecognizer retain];
     
     //! pan gesture recognizer
-    UIGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-    panGestureRecognizer.delegate = self;
-    [self.renderableModel.node addGestureRecognizer:panGestureRecognizer];
-    [panGestureRecognizer release];
+    _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+    _panGestureRecognizer.delegate = self;
+    [self.renderableModel.node addGestureRecognizer:_panGestureRecognizer];
+    [_panGestureRecognizer retain];
 }
 
 - (void) update:(ccTime)delta {
@@ -41,16 +46,33 @@
 
 }
 
+// disables touch listening to prevent conflicts with user controls
+- (void) disable {
+    self.renderableModel.node.isTouchEnabled = NO;
+    _enabled = NO;
+    _panGestureRecognizer.enabled =  NO;
+    _pinchGestureRecognizer.enabled = NO;
+    NSLog(@"Disabled zoom and pan");
+}
+
+
+- (void) enable {
+    self.renderableModel.node.isTouchEnabled = YES;
+    _enabled = YES;
+    _panGestureRecognizer.enabled =  YES;
+    _pinchGestureRecognizer.enabled = YES;
+    NSLog(@"Enabled zoom and pan");
+}
 
 #pragma mark - GestureRecognizer delegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    return NO;
+    return _enabled;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
-    return NO;
+    return _enabled;
 }
 
 - (void)handlePinchGesture:(UIPinchGestureRecognizer*)aPinchGestureRecognizer

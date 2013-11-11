@@ -28,5 +28,8 @@
 
 - (void) componentsHookHelper:(NSString *) methodName;
 
+- (void) disableZoomAndPan; // enable/disable touch events
+- (void) enableZoomAndPan;
+
 
 @end
