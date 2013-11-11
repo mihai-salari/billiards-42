@@ -101,6 +101,10 @@ enum {
 	_space = cpSpaceNew();
 	
 	cpSpaceSetGravity( _space, cpvzero ); // zero gravity
+    
+    cpSpaceSetDamping(_space, 0.5);
+    
+    cpSpaceSetIdleSpeedThreshold(_space, 10);
 	
     /*
 	//
