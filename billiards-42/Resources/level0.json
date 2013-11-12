@@ -13,7 +13,7 @@
         {
            "class":"Wall",
            "start": {
-                "x": 126,
+                "x": 136,
                 "y": 1085
            
            },
@@ -50,13 +50,29 @@
            "class":"Wall",
            "start": {
             "x": 75,
-            "y": 1040
+            "y": 1030
            
            },
            "end": {
             "x":75,
             "y":890
            }
+        },
+        {
+           "class":"Pocket",
+           "center": {
+            "x": 70,
+            "y":1095
+           },
+           "radius":35
+        },
+        {
+           "class":"Pocket",
+           "center": {
+            "x": 1845,
+            "y":1095
+           },
+           "radius":35
         },
 		{
 			"class":"Ball",

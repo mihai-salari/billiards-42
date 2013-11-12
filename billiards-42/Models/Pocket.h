@@ -7,8 +7,10 @@
 //
 
 #import "Model.h"
+#import "RenderComponent.h"
+#import "RenderableModel.h"
 
-@interface Pocket : Model
+@interface Pocket : Model <RenderableModel>
 
 @property CGPoint center; // Pocket center
 @property CGFloat radius; // Pocket radius

@@ -13,6 +13,8 @@
 		841CA116181471ED000AC5A2 /* BallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA115181471ED000AC5A2 /* BallView.m */; };
 		841CA11B182D83A8000AC5A2 /* CCNode+SFGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA11A182D83A8000AC5A2 /* CCNode+SFGestureRecognizers.m */; };
 		841CA11E182D9BA9000AC5A2 /* ZoomAndPanComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA11D182D9BA9000AC5A2 /* ZoomAndPanComponent.m */; };
+		841CA1211832B97A000AC5A2 /* PocketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA1201832B97A000AC5A2 /* PocketView.m */; };
+		841CA1231832BA81000AC5A2 /* pocket.png in Resources */ = {isa = PBXBuildFile; fileRef = 841CA1221832BA81000AC5A2 /* pocket.png */; };
 		84C6440817EAECB900696084 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440717EAECB900696084 /* QuartzCore.framework */; };
 		84C6440A17EAECB900696084 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440917EAECB900696084 /* OpenGLES.framework */; };
 		84C6440C17EAECB900696084 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440B17EAECB900696084 /* OpenAL.framework */; };
@@ -213,6 +215,9 @@
 		841CA11A182D83A8000AC5A2 /* CCNode+SFGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+SFGestureRecognizers.m"; sourceTree = "<group>"; };
 		841CA11C182D9BA9000AC5A2 /* ZoomAndPanComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZoomAndPanComponent.h; path = Components/ZoomAndPanComponent.h; sourceTree = "<group>"; };
 		841CA11D182D9BA9000AC5A2 /* ZoomAndPanComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZoomAndPanComponent.m; path = Components/ZoomAndPanComponent.m; sourceTree = "<group>"; };
+		841CA11F1832B97A000AC5A2 /* PocketView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PocketView.h; path = Views/PocketView.h; sourceTree = "<group>"; };
+		841CA1201832B97A000AC5A2 /* PocketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PocketView.m; path = Views/PocketView.m; sourceTree = "<group>"; };
+		841CA1221832BA81000AC5A2 /* pocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pocket.png; path = Resources/pocket.png; sourceTree = "<group>"; };
 		84C6440417EAECB900696084 /* billiards-42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "billiards-42.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C6440717EAECB900696084 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84C6440917EAECB900696084 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -683,6 +688,7 @@
 		84C6441C17EAECB900696084 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				841CA1221832BA81000AC5A2 /* pocket.png */,
 				84CB538E17F8A77800C01EE5 /* ball1.png */,
 				84CB538F17F8A77800C01EE5 /* level0.json */,
 				84CB539017F8A77800C01EE5 /* level0.png */,
@@ -1229,6 +1235,8 @@
 				841CA115181471ED000AC5A2 /* BallView.m */,
 				8AB9CA93182FB3C800476CF4 /* CirclePrimitive.h */,
 				8AB9CA94182FB3C800476CF4 /* CirclePrimitive.m */,
+				841CA11F1832B97A000AC5A2 /* PocketView.h */,
+				841CA1201832B97A000AC5A2 /* PocketView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1352,6 +1360,7 @@
 				84C6442A17EAECB900696084 /* Icon-Small.png in Resources */,
 				84C6442617EAECB900696084 /* Icon-72.png in Resources */,
 				84CB539317F8A77800C01EE5 /* level0.png in Resources */,
+				841CA1231832BA81000AC5A2 /* pocket.png in Resources */,
 				84C6441E17EAECB900696084 /* Default.png in Resources */,
 				84C6442817EAECB900696084 /* Icon-Small-50.png in Resources */,
 				84C6443317EAECB900696084 /* iTunesArtwork in Resources */,
@@ -1432,6 +1441,7 @@
 				84C6443E17EAECB900696084 /* CCActionCatmullRom.m in Sources */,
 				84C644B517EAECBA00696084 /* CCParticleSystem.m in Sources */,
 				8AC42FCB17F1521F006479E9 /* GameManager.m in Sources */,
+				841CA1211832B97A000AC5A2 /* PocketView.m in Sources */,
 				84C6450A17EAECBA00696084 /* CCTransition.m in Sources */,
 				84C644B217EAECBA00696084 /* CCParticleExamples.m in Sources */,
 				84C644AF17EAECBA00696084 /* CCParticleBatchNode.m in Sources */,
