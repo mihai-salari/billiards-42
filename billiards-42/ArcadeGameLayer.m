@@ -285,7 +285,7 @@ enum {
     location = [[CCDirector sharedDirector] convertToGL:location];
     location = [self convertToNodeSpace:location];
     [[_touched_ball getNode] removeChildByTag:100 ];
-    cpVect impulse = cpv((_touched_ball.getNode.position.x - location.x)*2, (_touched_ball.getNode.position.y - location.y)*2);
+    cpVect impulse = cpv((_touched_ball.getNode.position.x - location.x)*40, (_touched_ball.getNode.position.y - location.y)*40);
     cpBodyApplyImpulse(_touched_ball.getBody, impulse, cpv(0.0, 0.0));
     _touched_ball = NULL;
     [_controller enableZoomAndPan];

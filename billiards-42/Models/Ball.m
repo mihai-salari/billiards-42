@@ -63,9 +63,9 @@
 
 
 - (void) _createBody {
-    _cpBody = cpBodyNew(1.0f, cpMomentForCircle(1.0f, 0, self.radius, cpvzero));
+    _cpBody = cpBodyNew(10.0f, cpMomentForCircle(10.0f, 0, self.radius, cpvzero));
     _cpShape = cpCircleShapeNew(_cpBody, self.radius, cpvzero);
-    cpShapeSetElasticity( _cpShape, 0.5f );
+    cpShapeSetElasticity( _cpShape, 0.9f );
 	cpShapeSetFriction( _cpShape, 0.5f );
 }
 
