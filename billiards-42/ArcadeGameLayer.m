@@ -266,6 +266,7 @@ enum {
             Ball * ball = (Ball*)object;
             if (CGRectContainsPoint(ball.getNode.boundingBox, location)){
                 [ball touchStarted];
+                 ball.getNode.rotation = 0.0;//TODO use proper angle of sprite rotation
                 _touched_ball = ball;
                 [_controller disableZoomAndPan]; // to prevent conflict
                 NSLog(@"Ball touche began coordinates x = %f, y = %f", location.x, location.y);
@@ -285,7 +286,7 @@ enum {
     location = [[CCDirector sharedDirector] convertToGL:location];
     location = [self convertToNodeSpace:location];
     [[_touched_ball getNode] removeChildByTag:100 ];
-    cpVect impulse = cpv((_touched_ball.getNode.position.x - location.x)*2, (_touched_ball.getNode.position.y - location.y)*2);
+    cpVect impulse = cpv((_touched_ball.getNode.position.x - location.x)*10, (_touched_ball.getNode.position.y - location.y)*10);
     cpBodyApplyImpulse(_touched_ball.getBody, impulse, cpv(0.0, 0.0));
     _touched_ball = NULL;
     [_controller enableZoomAndPan];
@@ -299,7 +300,7 @@ enum {
     CGPoint location = [myTouch locationInView:[myTouch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
     location = [self convertToNodeSpace:location];
-    NSLog(@"Touch moved coordinates x = %f, y = %f", location.x, location.y);
+    //NSLog(@"Touch moved coordinates x = %f, y = %f", location.x, location.y);
     [_touched_ball touchMoved:(CGPoint) location];
     
 }

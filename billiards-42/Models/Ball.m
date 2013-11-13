@@ -85,6 +85,8 @@
 -(void)touchMoved:(CGPoint) touch {
     CCNode *node = [self getNode];
     CGPoint center = node.position;
+    float angle = node.rotation;
+    NSLog(@"Touch moved angle = %f %f %f", angle, center.x, center.y);
     
     //double distance = sqrt(pow(puck_center.x-touch_point.x, 2)+ pow(puck_center.y-touch_point.y, 2));
     double distance = ccpDistance(center, touch);
@@ -95,8 +97,7 @@
         distance = 50.0;
         float x = (0 + distance*(direction.x))/(delta+distance);
         float y = (0 + distance*(direction.y))/(delta+distance);
-        direction = ccp(x, y);
-        
+        direction = ccp(x, y);       
         
     }
     if (distance > 16) {
