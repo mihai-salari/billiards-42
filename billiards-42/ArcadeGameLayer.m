@@ -102,9 +102,9 @@ enum {
 	
 	cpSpaceSetGravity( _space, cpvzero ); // zero gravity
     
-    cpSpaceSetDamping(_space, 0.5);
+    cpSpaceSetDamping(_space, 0.4);
     
-    cpSpaceSetIdleSpeedThreshold(_space, 10);
+    cpSpaceSetIdleSpeedThreshold(_space, 50);
 	
     /*
 	//
@@ -150,7 +150,7 @@ enum {
 -(void) update:(ccTime) delta
 {
 	// Should use a fixed size step based on the animation interval.
-	int steps = 2;
+	int steps = 6;
 	CGFloat dt = [[CCDirector sharedDirector] animationInterval]/(CGFloat)steps;
 	
 	for(int i=0; i<steps; i++){
