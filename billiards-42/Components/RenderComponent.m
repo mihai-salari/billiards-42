@@ -25,6 +25,7 @@
     _view = [ViewFactory BuildViewByName:NSStringFromClass(self.model.class)];
     _view.model = self.renderableModel; // set model ref
     _view.renderLayer = self.renderLayer; // set layer
+    _view.controlLayer = self.controlLayer; //control layer
     [_view startup];
 }
 

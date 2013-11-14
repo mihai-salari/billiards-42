@@ -13,6 +13,7 @@
 #import "GameManager.h"
 #import "ArcadeGameScene.h"
 #import "Ball.h"
+#import "cocos2d.h"
 
 enum {
 	kTagParentNode = 1,
@@ -91,6 +92,10 @@ enum {
     [_controller loadFromJSON:path];
     _controller.renderLayer = self;
     _controller.physicsSpace = _space;
+    //Control Layer
+    CCLayer *controlLayer = [CCLayer node];
+    [self addChild:controlLayer z:10];
+    _controller.controlLayer = controlLayer;
     [_controller start]; // it's game time!
 }
 
@@ -265,8 +270,10 @@ enum {
         if ([object isMemberOfClass:[Ball class]]){
             Ball * ball = (Ball*)object;
             if (CGRectContainsPoint(ball.getNode.boundingBox, location)){
-                [ball touchStarted];
-                 ball.getNode.rotation = 0.0;//TODO use proper angle of sprite rotation
+                BallControlComponent* controllComponent = (BallControlComponent*) [ball getComponentOfClass:[BallControlComponent class] ];
+                [controllComponent touchStarted];
+//                [ball touchStarted];
+//                 ball.getNode.rotation = 0.0;//TODO use proper angle of sprite rotation
                 _touched_ball = ball;
                 [_controller disableZoomAndPan]; // to prevent conflict
                 NSLog(@"Ball touche began coordinates x = %f, y = %f", location.x, location.y);
@@ -285,9 +292,8 @@ enum {
     CGPoint location = [myTouch locationInView:[myTouch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
     location = [self convertToNodeSpace:location];
-    [[_touched_ball getNode] removeChildByTag:100 ];
-    cpVect impulse = cpv((_touched_ball.getNode.position.x - location.x)*40, (_touched_ball.getNode.position.y - location.y)*40);
-    cpBodyApplyImpulse(_touched_ball.getBody, impulse, cpv(0.0, 0.0));
+    BallControlComponent* controllComponent = (BallControlComponent*) [_touched_ball getComponentOfClass:[BallControlComponent class] ];
+    [controllComponent touchCompleted: location];
     _touched_ball = NULL;
     [_controller enableZoomAndPan];
 }
@@ -301,28 +307,10 @@ enum {
     location = [[CCDirector sharedDirector] convertToGL:location];
     location = [self convertToNodeSpace:location];
     //NSLog(@"Touch moved coordinates x = %f, y = %f", location.x, location.y);
-    [_touched_ball touchMoved:(CGPoint) location];
+    BallControlComponent* controllComponent = (BallControlComponent*) [_touched_ball getComponentOfClass:[BallControlComponent class] ];
+    [controllComponent touchMoved: location];
     
 }
-
-//- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//    
-//    
-//    UITouch *myTouch = [touches anyObject];
-//    CGPoint location = [myTouch locationInView:[myTouch view]];
-//    location = [[CCDirector sharedDirector] convertToGL:location];
-//    b2Vec2 locationWorld = b2Vec2(location.x/PTM_RATIO, location.y/PTM_RATIO);
-//    
-//    b2Vec2 impulse = b2Vec2((body->GetPosition().x - location.x/PTM_RATIO)*100, (body->GetPosition().y - location.y/PTM_RATIO)*100);
-//    
-//    
-//    body->ApplyLinearImpulse(impulse, locationWorld);
-//    
-//    isTouched = FALSE;
-//    [self removeChild:circle cleanup:TRUE];
-//    circle = NULL;
-//}
-
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
 {

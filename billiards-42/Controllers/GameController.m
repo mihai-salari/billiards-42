@@ -36,6 +36,7 @@
     for (Component* component in components) {
         component.renderLayer = self.renderLayer;
         component.physicsSpace = self.physicsSpace;
+        component.controlLayer = self.controlLayer;
     }
     [self componentsStartup];
 }

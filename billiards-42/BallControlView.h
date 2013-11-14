@@ -8,7 +8,7 @@
 
 #import "cocos2d.h"
 
-@interface CirclePrimitive : CCNode {
+@interface BallControlView : CCNode {
     int radius;
     int colorCode;
     CGPoint center;

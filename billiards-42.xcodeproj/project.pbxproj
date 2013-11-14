@@ -193,9 +193,10 @@
 		84CB539217F8A77800C01EE5 /* level0.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CB538F17F8A77800C01EE5 /* level0.json */; };
 		84CB539317F8A77800C01EE5 /* level0.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CB539017F8A77800C01EE5 /* level0.png */; };
 		84CB539617F8C54500C01EE5 /* ModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB539517F8C54500C01EE5 /* ModelFactory.m */; };
+		8A2B80BB1834B35100E913B9 /* BallControlComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B80BA1834B35100E913B9 /* BallControlComponent.m */; };
 		8A58A46D17F948E500F1B302 /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A58A46C17F948E500F1B302 /* CreditsScene.m */; };
 		8A58A47017F9490600F1B302 /* CreditsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A58A46F17F9490600F1B302 /* CreditsLayer.m */; };
-		8AB9CA95182FB3C800476CF4 /* CirclePrimitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9CA94182FB3C800476CF4 /* CirclePrimitive.m */; };
+		8AB9CA95182FB3C800476CF4 /* BallControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9CA94182FB3C800476CF4 /* BallControlView.m */; };
 		8AC42FCB17F1521F006479E9 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FCA17F1521F006479E9 /* GameManager.m */; };
 		8AC42FCF17F1595B006479E9 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FCE17F1595B006479E9 /* MenuScene.m */; };
 		8AC42FD217F1599C006479E9 /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC42FD117F1599C006479E9 /* MenuLayer.m */; };
@@ -584,12 +585,14 @@
 		84CB539017F8A77800C01EE5 /* level0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = level0.png; path = Resources/level0.png; sourceTree = "<group>"; };
 		84CB539417F8C54500C01EE5 /* ModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelFactory.h; path = Models/ModelFactory.h; sourceTree = "<group>"; };
 		84CB539517F8C54500C01EE5 /* ModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelFactory.m; path = Models/ModelFactory.m; sourceTree = "<group>"; };
+		8A2B80B91834B35100E913B9 /* BallControlComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallControlComponent.h; sourceTree = "<group>"; };
+		8A2B80BA1834B35100E913B9 /* BallControlComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallControlComponent.m; sourceTree = "<group>"; };
 		8A58A46B17F948E500F1B302 /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsScene.h; sourceTree = "<group>"; };
 		8A58A46C17F948E500F1B302 /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsScene.m; sourceTree = "<group>"; };
 		8A58A46E17F9490600F1B302 /* CreditsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsLayer.h; sourceTree = "<group>"; };
 		8A58A46F17F9490600F1B302 /* CreditsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsLayer.m; sourceTree = "<group>"; };
-		8AB9CA93182FB3C800476CF4 /* CirclePrimitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CirclePrimitive.h; sourceTree = "<group>"; };
-		8AB9CA94182FB3C800476CF4 /* CirclePrimitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CirclePrimitive.m; sourceTree = "<group>"; };
+		8AB9CA93182FB3C800476CF4 /* BallControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallControlView.h; sourceTree = "<group>"; };
+		8AB9CA94182FB3C800476CF4 /* BallControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallControlView.m; sourceTree = "<group>"; };
 		8AC42FC917F1521F006479E9 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		8AC42FCA17F1521F006479E9 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		8AC42FCD17F1595B006479E9 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
@@ -1207,6 +1210,8 @@
 				84CB538617F6D03800C01EE5 /* PhysicsComponent.m */,
 				841CA11C182D9BA9000AC5A2 /* ZoomAndPanComponent.h */,
 				841CA11D182D9BA9000AC5A2 /* ZoomAndPanComponent.m */,
+				8A2B80B91834B35100E913B9 /* BallControlComponent.h */,
+				8A2B80BA1834B35100E913B9 /* BallControlComponent.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1233,8 +1238,8 @@
 				841CA112181471D0000AC5A2 /* WorldView.m */,
 				841CA114181471ED000AC5A2 /* BallView.h */,
 				841CA115181471ED000AC5A2 /* BallView.m */,
-				8AB9CA93182FB3C800476CF4 /* CirclePrimitive.h */,
-				8AB9CA94182FB3C800476CF4 /* CirclePrimitive.m */,
+				8AB9CA93182FB3C800476CF4 /* BallControlView.h */,
+				8AB9CA94182FB3C800476CF4 /* BallControlView.m */,
 				841CA11F1832B97A000AC5A2 /* PocketView.h */,
 				841CA1201832B97A000AC5A2 /* PocketView.m */,
 			);
@@ -1409,6 +1414,7 @@
 				84C6447217EAECB900696084 /* ccDeprecated.m in Sources */,
 				84C6460717EAECBB00696084 /* main.m in Sources */,
 				84C6452D17EAECBA00696084 /* CCDirectorMac.m in Sources */,
+				8A2B80BB1834B35100E913B9 /* BallControlComponent.m in Sources */,
 				84C6448717EAECB900696084 /* ccGLStateCache.m in Sources */,
 				84C6455917EAECBA00696084 /* TransformUtils.m in Sources */,
 				84C644A617EAECBA00696084 /* CCNode+Debug.m in Sources */,
@@ -1539,7 +1545,7 @@
 				84C645CB17EAECBB00696084 /* cpConstraint.c in Sources */,
 				84C6460A17EAECBB00696084 /* AppDelegate.m in Sources */,
 				84C644E017EAECBA00696084 /* ccShaders.m in Sources */,
-				8AB9CA95182FB3C800476CF4 /* CirclePrimitive.m in Sources */,
+				8AB9CA95182FB3C800476CF4 /* BallControlView.m in Sources */,
 				84C645C717EAECBB00696084 /* chipmunk.c in Sources */,
 				84C6453617EAECBA00696084 /* CCWindow.m in Sources */,
 				84C6451417EAECBA00696084 /* cocos2d.m in Sources */,

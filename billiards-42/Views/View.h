@@ -17,6 +17,7 @@
 
 @property (retain) Model<RenderableModel> * model;
 @property (retain) CCLayer* renderLayer;
+@property (retain) CCLayer* controlLayer;
 @property (retain) CCNode* node;
 
 - (void) startup;

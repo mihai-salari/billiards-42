@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 SalkoDev. All rights reserved.
 //
 
-#import "CirclePrimitive.h"
+#import "BallControlView.h"
 
-@implementation CirclePrimitive
+@implementation BallControlView
 
 @synthesize colorCode;
 @synthesize radius;
@@ -36,7 +36,7 @@
 
 -(void)draw {
     
-    glLineWidth(3);
+    glLineWidth(1);
     
     
     //    //red
@@ -55,16 +55,28 @@
     // coordinates are relative to this sprites "position"
     // the draw primitives origin are in the lower left corner relative to the anchor point
     // so the center is "radius" pixels over and up on the x,y axis
-    CGPoint c = ccp(center.x +16, center.y +16);
-    CGPoint d = ccp(direction.x +16, direction.y +16);
+    CGPoint c = ccp(center.x, center.y );
+    CGPoint d = ccp(direction.x, direction.y);
     
     ccDrawCircle(c, radius, 0, 1000, NO);
-    ccDrawColor4B(255, 0, 0, 255);
+    ccDrawColor4B(255, 255, 255, 255);
+    
+    glLineWidth(5);
     ccDrawLine(c, d);
     
-    CGPoint opposit = ccp(- d.x+32,- d.y+32);
+    int rx = direction.x - center.x;
+    int ry = direction.y - center.y ;
+    float cs = cos(CC_DEGREES_TO_RADIANS(360));
+    float ss = sin(CC_DEGREES_TO_RADIANS(360));
+    
+    CGPoint opposit = ccp((center.x - rx * cs - ry * ss),(center.y - rx * ss - ry * cs));
+    
+//    float x = cos(M_PI) * radius + center.x;
+//    float y = sin(M_PI) * radius + center.y;
+//    CGPoint opposit = ccp(x,y);
     //NSLog(@"direction x =%f y= %f, opposit x=%f y= %f", d.x, d.y, opposit.x, opposit.y);
-    ccDrawColor4B(0, 255, 0, 255);
+    glLineWidth(2);
+    ccDrawColor4B(255, 255, 255, 255);
     ccDrawLine(c, opposit);
     
     ccDrawColor4B(255, 0, 0, 255);

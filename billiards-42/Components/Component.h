@@ -15,6 +15,7 @@
 @property (strong) Model *model;
 // following props made to interact with scene
 @property (retain) CCLayer* renderLayer;
+@property (retain) CCLayer* controlLayer;
 @property cpSpace* physicsSpace;
 
 

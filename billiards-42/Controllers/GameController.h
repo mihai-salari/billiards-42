@@ -13,6 +13,7 @@
 
 @property (retain) ModelsManager *modelsManager; // Controller creates it in init
 @property (retain) CCLayer* renderLayer;
+@property (retain) CCLayer* controlLayer;
 @property cpSpace* physicsSpace;
 
 - (id) init;

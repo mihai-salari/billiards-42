@@ -10,7 +10,6 @@
 #import "PhysicsComponent.h"
 #import "RenderComponent.h"
 #import "ModelFactory.h"
-#import "CirclePrimitive.h"
 
 @implementation Ball
 
@@ -24,7 +23,7 @@
 }
 
 + (NSArray *) listComponentsClasses {
-    return [NSArray arrayWithObjects:[RenderComponent class],[PhysicsComponent class], nil];
+    return [NSArray arrayWithObjects:[RenderComponent class],[PhysicsComponent class], [BallControlComponent class], nil];
 }
 
 
@@ -74,40 +73,6 @@
 - (void) loadFromJSON:(NSDictionary *)jsonDict {
     self.position = [ModelFactory CGPointFromJSON:jsonDict[@"position"]];
     self.radius = [( (NSNumber*) jsonDict[@"radius"] ) floatValue];
-}
-
-- (void)touchStarted {
-    CGPoint rightPoint = CGPointMake(0, 0);
-    circle = [[CirclePrimitive alloc] initWithRadius:16 colorCode:2 center:rightPoint direction:rightPoint];
-    [[self getNode] addChild: circle z:1 tag:100];
-}
-
--(void)touchMoved:(CGPoint) touch {
-    CCNode *node = [self getNode];
-    CGPoint center = node.position;
-    float angle = node.rotation;
-    NSLog(@"Touch moved angle = %f %f %f", angle, center.x, center.y);
-    
-    //double distance = sqrt(pow(puck_center.x-touch_point.x, 2)+ pow(puck_center.y-touch_point.y, 2));
-    double distance = ccpDistance(center, touch);
-    CGPoint direction = ccp(touch.x - center.x, touch.y - center.y);
-    
-    if (distance > 50){
-        float delta = (distance - 50);
-        distance = 50.0;
-        float x = (0 + distance*(direction.x))/(delta+distance);
-        float y = (0 + distance*(direction.y))/(delta+distance);
-        direction = ccp(x, y);       
-        
-    }
-    if (distance > 16) {
-        
-        //NSLog(@"X =%f, Y=%f", direction.x, direction.y);
-        circle.direction = direction;
-        circle.radius = distance;
-    }
-    
-    
 }
 
  
