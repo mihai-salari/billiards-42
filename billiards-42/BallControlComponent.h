@@ -13,12 +13,12 @@
 
 @interface BallControlComponent : Component
 
-@property (readonly) Model<RenderableModel>* renderableModel;
-@property (readonly) Model<PhysicsModel>* physicalModel;
 @property (retain) BallControlView* view;
 
 - (void)touchStarted;
 - (void)touchMoved:(CGPoint) touch;
 - (void)touchCompleted:(CGPoint) touch;
+
++ (BallControlComponent*) fromModel:(Model*) model;
 
 @end

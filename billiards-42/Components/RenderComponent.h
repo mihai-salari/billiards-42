@@ -10,11 +10,12 @@
 #import "Component.h"
 #import "RenderableModel.h"
 #import "ViewFactory.h"
+#import "Model.h"
 
 @interface RenderComponent : Component
 
-@property (readonly) Model<RenderableModel>* renderableModel;
-
 - (View*) getView;
+
++ (RenderComponent*) fromModel:(Model*) model;
 
 @end

@@ -17,6 +17,20 @@
     return self;
 }
 
+- (Model<RenderableModel> *) renderableModel {
+    if( ! [[self.model class] conformsToProtocol:@protocol(RenderableModel)] ) {
+        NSLog(@"Class %@ does not conforms to renderableModel", NSStringFromClass([self.model class]) );
+        return nil;
+    } else return (Model<RenderableModel>*) self.model;
+}
+
+- (Model<PhysicsModel> *) physicalModel {
+    if( ! [[self.model class] conformsToProtocol:@protocol(PhysicsModel)] ) {
+        NSLog(@"Class %@ does not conforms to physicsModel", NSStringFromClass([self.model class]) );
+        return nil;
+    } else return (Model<PhysicsModel>*) self.model;
+}
+
 - (void) startup{
     // empty startup hook -- override
 }

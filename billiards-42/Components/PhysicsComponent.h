@@ -11,6 +11,6 @@
 
 @interface PhysicsComponent : Component
 
-@property (readonly) Model<PhysicsModel>* physicalModel;
++ (PhysicsComponent*) fromModel:(Model*) model;
 
 @end

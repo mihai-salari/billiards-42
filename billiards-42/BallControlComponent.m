@@ -11,13 +11,7 @@
 
 @implementation BallControlComponent
 
-- (Model<RenderableModel> *) renderableModel {
-    return (Model<RenderableModel>*) self.model;
-}
 
-- (Model<PhysicsModel> *) physicalModel {
-    return (Model<PhysicsModel>*) self.model;
-}
 
 - (void) startup{
 
@@ -65,6 +59,10 @@
     if (_view) {
         _view.center = [self.model.getNode position];
     }
+}
+
++ (BallControlComponent*) fromModel:(Model *)model {
+    return (BallControlComponent*) [model getComponentOfClass:[BallControlComponent class] ];
 }
 
 @end

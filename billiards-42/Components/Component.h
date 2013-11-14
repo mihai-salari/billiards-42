@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Model.h"
+#import "RenderableModel.h"
+#import "PhysicsModel.h"
 
 @interface Component : NSObject
 
@@ -18,6 +20,9 @@
 @property (retain) CCLayer* controlLayer;
 @property cpSpace* physicsSpace;
 
+
+@property (readonly) Model<RenderableModel>* renderableModel;
+@property (readonly) Model<PhysicsModel>* physicalModel;
 
 - (id) initWithModel:(Model *) model;
 - (void) startup; // startup hook - runs once - when level is loaded

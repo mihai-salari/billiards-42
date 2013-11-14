@@ -11,12 +11,12 @@
 
 @interface ZoomAndPanComponent : Component <UIGestureRecognizerDelegate>
 
-@property (readonly) Model<RenderableModel>* renderableModel;
-
 @property CGFloat minZoom;
 @property CGFloat maxZoom;
 
 - (void) disable;
 - (void) enable;
+
++ (ZoomAndPanComponent*) fromModel:(Model*) model;
 
 @end

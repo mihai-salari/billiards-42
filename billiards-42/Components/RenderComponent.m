@@ -16,10 +16,6 @@
     View* _view;
 }
 
-- (Model<RenderableModel> *) renderableModel {
-    return (Model<RenderableModel>*) self.model;
-}
-
 - (void) startup{
     // create view
     _view = [ViewFactory BuildViewByName:NSStringFromClass(self.model.class)];
@@ -41,5 +37,8 @@
     return _view;
 }
 
++ (RenderComponent*) fromModel:(Model *)model {
+    return (RenderComponent*) [model getComponentOfClass:[RenderComponent class] ];
+}
 
 @end

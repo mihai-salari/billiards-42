@@ -15,10 +15,6 @@
     UIGestureRecognizer* _panGestureRecognizer;
 }
 
-- (Model<RenderableModel> *) renderableModel {
-    return (Model<RenderableModel>*) self.model;
-}
-
 - (void) startup{
     _enabled = YES;
     // save min zoom (initial)
@@ -120,6 +116,10 @@
     
     if( right < minR ) self.renderLayer.position = ccpAdd( self.renderLayer.position, CGPointMake((minR - right ), 0));
     if( bottom < minB ) self.renderLayer.position = ccpAdd( self.renderLayer.position, CGPointMake(0, - ( minB - bottom )));
+}
+
++ (ZoomAndPanComponent *) fromModel:(Model *)model {
+    return (ZoomAndPanComponent*) [model getComponentOfClass:[ZoomAndPanComponent class] ];
 }
 
 @end

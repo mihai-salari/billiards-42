@@ -155,7 +155,7 @@ enum {
 -(void) update:(ccTime) delta
 {
 	// Should use a fixed size step based on the animation interval.
-	int steps = 6;
+	int steps = 16;
 	CGFloat dt = [[CCDirector sharedDirector] animationInterval]/(CGFloat)steps;
 	
 	for(int i=0; i<steps; i++){
@@ -270,7 +270,7 @@ enum {
         if ([object isMemberOfClass:[Ball class]]){
             Ball * ball = (Ball*)object;
             if (CGRectContainsPoint(ball.getNode.boundingBox, location)){
-                BallControlComponent* controllComponent = (BallControlComponent*) [ball getComponentOfClass:[BallControlComponent class] ];
+                BallControlComponent* controllComponent = [BallControlComponent fromModel:ball];
                 [controllComponent touchStarted];
 //                [ball touchStarted];
 //                 ball.getNode.rotation = 0.0;//TODO use proper angle of sprite rotation
@@ -292,7 +292,7 @@ enum {
     CGPoint location = [myTouch locationInView:[myTouch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
     location = [self convertToNodeSpace:location];
-    BallControlComponent* controllComponent = (BallControlComponent*) [_touched_ball getComponentOfClass:[BallControlComponent class] ];
+    BallControlComponent* controllComponent = [BallControlComponent fromModel:_touched_ball];
     [controllComponent touchCompleted: location];
     _touched_ball = NULL;
     [_controller enableZoomAndPan];
@@ -307,7 +307,7 @@ enum {
     location = [[CCDirector sharedDirector] convertToGL:location];
     location = [self convertToNodeSpace:location];
     //NSLog(@"Touch moved coordinates x = %f, y = %f", location.x, location.y);
-    BallControlComponent* controllComponent = (BallControlComponent*) [_touched_ball getComponentOfClass:[BallControlComponent class] ];
+    BallControlComponent* controllComponent = [BallControlComponent fromModel:_touched_ball];
     [controllComponent touchMoved: location];
     
 }

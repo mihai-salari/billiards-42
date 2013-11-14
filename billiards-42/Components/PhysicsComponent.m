@@ -10,10 +10,6 @@
 
 @implementation PhysicsComponent
 
-- (Model<PhysicsModel> *) physicalModel {
-    return (Model<PhysicsModel>*) self.model;
-}
-
 - (void) startup{
     cpBody* body = [self.physicalModel getBody];
     
@@ -32,6 +28,10 @@
 
 - (void) beforeRemove {
     // empty beforeRemove hook - override
+}
+
++ (PhysicsComponent*) fromModel:(Model *)model {
+    return (PhysicsComponent*) [model getComponentOfClass:[PhysicsComponent class] ];
 }
 
 @end

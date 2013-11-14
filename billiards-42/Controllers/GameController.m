@@ -72,13 +72,11 @@
 }
 
 - (void) enableZoomAndPan {
-    ZoomAndPanComponent* zoomAndPan = (ZoomAndPanComponent*)[_modelsManager.world getComponentOfClass:[ZoomAndPanComponent class]];
-    [zoomAndPan enable];
+    [[ZoomAndPanComponent fromModel:_modelsManager.world] enable];
 }
 
 - (void) disableZoomAndPan {
-    ZoomAndPanComponent* zoomAndPan = (ZoomAndPanComponent*)[_modelsManager.world getComponentOfClass:[ZoomAndPanComponent class]];
-    [zoomAndPan disable];
+    [[ZoomAndPanComponent fromModel:_modelsManager.world] disable];
 }
 
 @end
