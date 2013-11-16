@@ -41,6 +41,10 @@
     _mid = val;
 }
 
+- (u_int32_t) getMid {
+    return _mid;
+}
+
 - (void) addComponent:(NSObject *)component {
     // adds component
     [_components addObject:component];

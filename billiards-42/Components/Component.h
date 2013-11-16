@@ -11,6 +11,7 @@
 #import "Model.h"
 #import "RenderableModel.h"
 #import "PhysicsModel.h"
+#import "GameDelegate.h"
 
 @interface Component : NSObject
 
@@ -19,10 +20,12 @@
 @property (retain) CCLayer* renderLayer;
 @property (retain) CCLayer* controlLayer;
 @property cpSpace* physicsSpace;
-
+@property (retain) NSMutableArray* allModels; // to access other models
 
 @property (readonly) Model<RenderableModel>* renderableModel;
 @property (readonly) Model<PhysicsModel>* physicalModel;
+
+@property (retain) NSObject<GameDelegate>* delegate; // game delegate
 
 - (id) initWithModel:(Model *) model;
 - (void) startup; // startup hook - runs once - when level is loaded

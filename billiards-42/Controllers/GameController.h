@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "ModelsManager.h"
+#import "GameDelegate.h"
 
-@interface GameController : NSObject
+@interface GameController : NSObject<GameDelegate>
 
 @property (retain) ModelsManager *modelsManager; // Controller creates it in init
 @property (retain) CCLayer* renderLayer;
@@ -32,5 +33,6 @@
 - (void) disableZoomAndPan; // enable/disable touch events
 - (void) enableZoomAndPan;
 
+- (void) ball:(NSObject *)ball inPocket:(NSObject *)pocket;
 
 @end

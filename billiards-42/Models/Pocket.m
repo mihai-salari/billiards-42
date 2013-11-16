@@ -8,11 +8,12 @@
 
 #import "Pocket.h"
 #import "ModelFactory.h"
+#import "BallInPocketComponent.h"
 
 @implementation Pocket
 
 + (NSArray *) listComponentsClasses {
-    return [NSArray arrayWithObjects:[RenderComponent class], nil];
+    return [NSArray arrayWithObjects:[RenderComponent class],[BallInPocketComponent class], nil];
 }
 
 

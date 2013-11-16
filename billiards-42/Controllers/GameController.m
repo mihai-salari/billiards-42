@@ -8,6 +8,7 @@
 
 #import "GameController.h"
 #import "ZoomAndPanComponent.h"
+#import "Ball.h"
 
 @implementation GameController
 
@@ -37,6 +38,7 @@
         component.renderLayer = self.renderLayer;
         component.physicsSpace = self.physicsSpace;
         component.controlLayer = self.controlLayer;
+        component.delegate = self;
     }
     [self componentsStartup];
 }
@@ -77,6 +79,13 @@
 
 - (void) disableZoomAndPan {
     [[ZoomAndPanComponent fromModel:_modelsManager.world] disable];
+}
+
+// GameDelegate
+
+- (void) ball:(NSObject *)ball inPocket:(NSObject *)pocket {
+    Ball* ballModel = (Ball*) ball;
+    NSLog(@"Ball in pocket event raised %d",[ballModel getMid]);
 }
 
 @end
