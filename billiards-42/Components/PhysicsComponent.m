@@ -46,7 +46,7 @@ static int physicsComponentCollisionBegin( cpArbiter* arb, cpSpace* space, void*
 }
 
 - (void) update:(ccTime)delta {
-    // empty update hook -- override
+    [self applyVelocityLimits];
 }
 
 - (void) beforeRemove {
@@ -73,6 +73,16 @@ static int physicsComponentCollisionBegin( cpArbiter* arb, cpSpace* space, void*
 
 - (void) processCollisionWith:(Model<PhysicsModel> *)modelB {
     [self.delegate handleCollisionOf:self.physicalModel and:modelB];
+}
+
+// limit velocity
+- (void) applyVelocityLimits {
+    cpVect vel = cpBodyGetVel( [self.physicalModel getBody] );
+    cpFloat len = cpvlength(vel);
+    if( ( len > 0 ) && ( len<MINIMAL_SPEED ) ) {
+        NSLog(@"Model %d has been stopped by threshold vel is %f",[self.model getMid],len);
+        cpBodySetVel([self.physicalModel getBody],cpvzero); // set to zero
+    }
 }
 
 + (PhysicsComponent*) fromModel:(Model *)model {
