@@ -33,6 +33,8 @@
 - (void) disableZoomAndPan; // enable/disable touch events
 - (void) enableZoomAndPan;
 
+- (void) handleCollisionOf:(Model<PhysicsModel> *)modelA and:(Model<PhysicsModel> *)modelB;
+
 - (void) ball:(NSObject *)ball inPocket:(NSObject *)pocket;
 
 @end

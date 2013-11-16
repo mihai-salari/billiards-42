@@ -15,7 +15,6 @@
 		841CA11E182D9BA9000AC5A2 /* ZoomAndPanComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA11D182D9BA9000AC5A2 /* ZoomAndPanComponent.m */; };
 		841CA1211832B97A000AC5A2 /* PocketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA1201832B97A000AC5A2 /* PocketView.m */; };
 		841CA1231832BA81000AC5A2 /* pocket.png in Resources */ = {isa = PBXBuildFile; fileRef = 841CA1221832BA81000AC5A2 /* pocket.png */; };
-		841CA126183758AA000AC5A2 /* BallInPocketComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA125183758AA000AC5A2 /* BallInPocketComponent.m */; };
 		84C6440817EAECB900696084 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440717EAECB900696084 /* QuartzCore.framework */; };
 		84C6440A17EAECB900696084 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440917EAECB900696084 /* OpenGLES.framework */; };
 		84C6440C17EAECB900696084 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440B17EAECB900696084 /* OpenAL.framework */; };
@@ -220,8 +219,6 @@
 		841CA11F1832B97A000AC5A2 /* PocketView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PocketView.h; path = Views/PocketView.h; sourceTree = "<group>"; };
 		841CA1201832B97A000AC5A2 /* PocketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PocketView.m; path = Views/PocketView.m; sourceTree = "<group>"; };
 		841CA1221832BA81000AC5A2 /* pocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pocket.png; path = Resources/pocket.png; sourceTree = "<group>"; };
-		841CA124183758AA000AC5A2 /* BallInPocketComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BallInPocketComponent.h; path = Components/BallInPocketComponent.h; sourceTree = "<group>"; };
-		841CA125183758AA000AC5A2 /* BallInPocketComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BallInPocketComponent.m; path = Components/BallInPocketComponent.m; sourceTree = "<group>"; };
 		841CA12718376CB4000AC5A2 /* GameDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameDelegate.h; path = Controllers/GameDelegate.h; sourceTree = "<group>"; };
 		84C6440417EAECB900696084 /* billiards-42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "billiards-42.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C6440717EAECB900696084 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1216,8 +1213,6 @@
 				841CA11D182D9BA9000AC5A2 /* ZoomAndPanComponent.m */,
 				8A2B80B91834B35100E913B9 /* BallControlComponent.h */,
 				8A2B80BA1834B35100E913B9 /* BallControlComponent.m */,
-				841CA124183758AA000AC5A2 /* BallInPocketComponent.h */,
-				841CA125183758AA000AC5A2 /* BallInPocketComponent.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1446,7 +1441,6 @@
 				84C6445017EAECB900696084 /* CCActionManager.m in Sources */,
 				84C644B817EAECBA00696084 /* CCParticleSystemQuad.m in Sources */,
 				84C6461F17EE259700696084 /* RenderComponent.m in Sources */,
-				841CA126183758AA000AC5A2 /* BallInPocketComponent.m in Sources */,
 				84C6462817EE269100696084 /* GameController.m in Sources */,
 				84C6447B17EAECB900696084 /* CCDrawNode.m in Sources */,
 				84C6450D17EAECBA00696084 /* CCTransitionPageTurn.m in Sources */,

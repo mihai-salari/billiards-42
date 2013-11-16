@@ -9,11 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+#define COLLISION_WALL 1
+#define COLLISION_BALL 2
+#define COLLISION_POCKET 4
+
 @protocol PhysicsModel <NSObject>
 
 - (cpBody*) getBody;
 - (void) setBody:(cpBody*) body;
 - (cpShape*) getShape;
 - (CGPoint) getPosition;
+
+@property (readonly) uint collisionType;
+@property (readonly) BOOL trackCollisions;
+- (NSArray*) getSupportedCollisionTypes;
 
 @end

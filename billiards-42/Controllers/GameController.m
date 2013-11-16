@@ -9,6 +9,8 @@
 #import "GameController.h"
 #import "ZoomAndPanComponent.h"
 #import "Ball.h"
+#import "Pocket.h"
+#import "Wall.h"
 
 @implementation GameController
 
@@ -83,9 +85,24 @@
 
 // GameDelegate
 
+- (void) handleCollisionOf:(Model<PhysicsModel> *)modelA and:(Model<PhysicsModel> *)modelB {
+    // ball -> pocket
+    if( [modelA isKindOfClass:[Ball class]] && [modelB isKindOfClass:[Pocket class]]) {
+        [self ball:modelA inPocket:modelB];
+    }
+    // ball -> wall
+    if([modelA isKindOfClass:[Ball class]] && [modelB isKindOfClass:[Wall class]]) {
+        NSLog(@"!!! Ball hit wall");
+    }
+    // ball -> ball
+    if([modelA isKindOfClass:[Ball class]] && [modelB isKindOfClass:[Ball class]]) {
+        NSLog(@"!!! Ball hit Ball");
+    }
+}
+
 - (void) ball:(NSObject *)ball inPocket:(NSObject *)pocket {
     Ball* ballModel = (Ball*) ball;
-    NSLog(@"Ball in pocket event raised %d",[ballModel getMid]);
+    NSLog(@"!!! Ball in pocket event raised %d",[ballModel getMid]);
 }
 
 @end

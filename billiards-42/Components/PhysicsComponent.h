@@ -13,4 +13,8 @@
 
 + (PhysicsComponent*) fromModel:(Model*) model;
 
+- (Model<PhysicsModel>*) findByBody:(cpBody*) body;
+
+- (void) processCollisionWith:(Model*) model;
+
 @end

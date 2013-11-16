@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "Ball.h"
-//#import "Pocket.h"
+
 
 @protocol GameDelegate <NSObject>
 
-- (void) ball:(NSObject*) ball inPocket:(NSObject*) pocket;
+- (void) handleCollisionOf:(Model<PhysicsModel>*) modelA and:(Model<PhysicsModel>*) modelB;
 
 @end

@@ -51,6 +51,13 @@
     cpShapeSetElasticity( _cpShape, 0.5f );
 }
 
+- (uint) collisionType {
+    return COLLISION_WALL;
+}
+
+- (BOOL) trackCollisions {
+    return NO; // will collide, but won't fire events about this
+}
 
 // load
 

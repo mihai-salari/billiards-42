@@ -24,7 +24,7 @@
 }
 
 -(void)touchMoved:(CGPoint) touch {
-   NSLog(@"BallControlComponent touchMoved");
+   //NSLog(@"BallControlComponent touchMoved");
     
     CGPoint center = _view.center;
     double distance = ccpDistance(center, touch);
@@ -46,7 +46,7 @@
 }
 
 - (void)touchCompleted:(CGPoint) touch {
-    NSLog(@"BallControlComponent touchCompleted");
+    //NSLog(@"BallControlComponent touchCompleted");
     cpVect impulse = cpv((self.model.getNode.position.x - touch.x)*100, (self.model.getNode.position.y - touch.y)*100);
     cpBodyApplyImpulse(self.physicalModel.getBody, impulse, cpv(0.0, 0.0));
     // create view

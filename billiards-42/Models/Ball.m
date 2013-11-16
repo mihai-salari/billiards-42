@@ -68,6 +68,18 @@
 	cpShapeSetFriction( _cpShape, 0.5f );
 }
 
+- (uint) collisionType {
+    return COLLISION_BALL;
+}
+
+- (BOOL) trackCollisions {
+    return YES;
+}
+
+- (NSArray*) getSupportedCollisionTypes {
+    return [NSArray arrayWithObjects: [NSNumber numberWithInt:COLLISION_BALL], [NSNumber numberWithInt:COLLISION_WALL], [NSNumber numberWithInt:COLLISION_POCKET], nil];
+}
+
 // load
 
 - (void) loadFromJSON:(NSDictionary *)jsonDict {
