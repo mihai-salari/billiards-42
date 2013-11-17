@@ -79,7 +79,7 @@ static int physicsComponentCollisionBegin( cpArbiter* arb, cpSpace* space, void*
 - (void) applyVelocityLimits {
     cpVect vel = cpBodyGetVel( [self.physicalModel getBody] );
     cpFloat len = cpvlength(vel);
-    if( ( len > 0 ) && ( len<MINIMAL_SPEED ) ) {
+    if( ( len > 0 ) && ( len< cpSpaceGetIdleSpeedThreshold(self.physicsSpace) ) ) {
         NSLog(@"Model %d has been stopped by threshold vel is %f",[self.model getMid],len);
         cpBodySetVel([self.physicalModel getBody],cpvzero); // set to zero
     }

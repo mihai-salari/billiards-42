@@ -10,7 +10,7 @@
 			},
 			"background": "level0.png",
             "physics_damping": 0.4,
-            "physics_idle_speed": 5.0
+            "physics_idle_speed": 25.0
 		},
         {
            "class":"Wall",

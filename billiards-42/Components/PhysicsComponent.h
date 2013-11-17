@@ -9,8 +9,6 @@
 #import "Component.h"
 #import "PhysicsModel.h"
 
-#define MINIMAL_SPEED 5.0f
-
 @interface PhysicsComponent : Component
 
 + (PhysicsComponent*) fromModel:(Model*) model;
