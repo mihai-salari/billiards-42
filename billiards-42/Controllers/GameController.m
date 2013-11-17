@@ -33,8 +33,15 @@
     [self.modelsManager loadFromJSON:filePath];
 }
 
+- (void) setupPhysics {
+    World* world = self.modelsManager.world;
+    cpSpaceSetDamping( self.physicsSpace, world.physicsDamping );
+    cpSpaceSetIdleSpeedThreshold( self.physicsSpace, world.physicsIdleSpeed );
+}
+
 // starts everything
 - (void) start {
+    [self setupPhysics];
     NSMutableArray* components = [self.modelsManager allComponents];
     for (Component* component in components) {
         component.renderLayer = self.renderLayer;

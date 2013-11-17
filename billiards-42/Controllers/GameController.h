@@ -37,4 +37,7 @@
 
 - (void) ball:(NSObject *)ball inPocket:(NSObject *)pocket;
 
+- (void) setupPhysics; // sets physics rules based on level data
+
+
 @end

@@ -12,10 +12,10 @@
 
 @interface World : Model <RenderableModel>
 
-@property (nonatomic,retain) CCNode* node;
-
 @property CGSize size; // world size ( when zoomed in ) in points
 @property (strong) NSString* background; // background image used
 
+@property float physicsDamping;
+@property float physicsIdleSpeed;
 
 @end
