@@ -32,5 +32,6 @@
 - (void) disableZoomAndPan; // enable/disable touch events
 - (void) enableZoomAndPan;
 
+- (void) setupPhysics; // sets physics rules based on level data
 
 @end

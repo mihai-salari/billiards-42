@@ -106,33 +106,6 @@ enum {
 	_space = cpSpaceNew();
 	
 	cpSpaceSetGravity( _space, cpvzero ); // zero gravity
-    
-    cpSpaceSetDamping(_space, 0.4);
-    
-    cpSpaceSetIdleSpeedThreshold(_space, 50);
-	
-    /*
-	//
-	// rogue shapes
-	// We have to free them manually
-	//
-	// bottom
-	_walls[0] = cpSegmentShapeNew( _space->staticBody, cpv(0,0), cpv(s.width,0), 0.0f);
-	
-	// top
-	_walls[1] = cpSegmentShapeNew( _space->staticBody, cpv(0,s.height), cpv(s.width,s.height), 0.0f);
-	
-	// left
-	_walls[2] = cpSegmentShapeNew( _space->staticBody, cpv(0,0), cpv(0,s.height), 0.0f);
-	
-	// right
-	_walls[3] = cpSegmentShapeNew( _space->staticBody, cpv(s.width,0), cpv(s.width,s.height), 0.0f);
-	
-	for( int i=0;i<4;i++) {
-		cpShapeSetElasticity( _walls[i], 1.0f );
-		cpShapeSetFriction( _walls[i], 1.0f );
-		cpSpaceAddStaticShape(_space, _walls[i] );
-	}*/
 	
 	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:_space];
 	_debugLayer.visible = YES;//NO;
@@ -141,11 +114,6 @@ enum {
 
 - (void)dealloc
 {
-	/*// manually Free rogue shapes
-	for( int i=0;i<4;i++) {
-		cpShapeFree( _walls[i] );
-	}
-	*/
 	cpSpaceFree( _space );
 	
 	[super dealloc];

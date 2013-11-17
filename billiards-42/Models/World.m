@@ -35,6 +35,8 @@
     self.mid = [((NSNumber* )jsonDict[@"mid"]) integerValue ];
     self.size = [ModelFactory CGSizeFromJSON:jsonDict[@"size"]];
     self.background = jsonDict[@"background"];
+    self.physicsDamping = [((NSNumber* )jsonDict[@"physics_damping"]) floatValue ];
+    self.physicsIdleSpeed = [((NSNumber* )jsonDict[@"physics_idle_speed"]) floatValue ];
 }
 
 @end
