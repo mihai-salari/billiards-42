@@ -54,7 +54,6 @@
     }
     components[@(model.mid)] = component; // this maybe redundant
     component.model = model;
-    component.allModels = self.allModels;
     [model addComponent:component];
     [_components addObject:component]; // this IS redundant, but allows us to search fast and easy
 }

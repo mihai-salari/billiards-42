@@ -20,7 +20,6 @@
 @property (retain) CCLayer* renderLayer;
 @property (retain) CCLayer* controlLayer;
 @property cpSpace* physicsSpace;
-@property (retain) NSMutableArray* allModels; // to access other models
 
 @property (readonly) Model<RenderableModel>* renderableModel;
 @property (readonly) Model<PhysicsModel>* physicalModel;

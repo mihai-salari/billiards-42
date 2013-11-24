@@ -34,6 +34,8 @@ static int physicsComponentCollisionBegin( cpArbiter* arb, cpSpace* space, void*
 - (void) startup{
     cpBody* body = [self.physicalModel getBody];
     
+    cpBodySetUserData(body, self.physicalModel);
+    
     cpSpaceAddShape(self.physicsSpace, [self.physicalModel getShape] );
     if( ! cpBodyIsStatic(body) ) { // dont add static bodies
         CGPoint pos = [self.physicalModel getPosition];
@@ -63,12 +65,7 @@ static int physicsComponentCollisionBegin( cpArbiter* arb, cpSpace* space, void*
 }
 
 - (Model<PhysicsModel>*) findByBody:(cpBody*) body {
-    for (Model<PhysicsModel>* m in self.allModels) {
-        if( [m respondsToSelector:@selector(getBody)] && ( [m getBody] == body ) ) {
-            return m;
-        }
-    }
-    return NULL;
+    return (Model<PhysicsModel>*) cpBodyGetUserData( body );
 }
 
 - (void) processCollisionWith:(Model<PhysicsModel> *)modelB {
