@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+<head>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="lib/jsoneditor/jsoneditor-min.css">
+<script type="text/javascript" src="lib/jsoneditor/jsoneditor-min.js"></script>
+
+<script type='text/javascript'>
+	var scaleX = 1;
+	var scaleY = 1;
+	var imgHeight = 0;
+	var fileName = '';
+	var img;
+	var ballImg;
+	var wall_start = null;
+	var wall_end = null;
+	
+    function loadImage() {
+        var input, file, fr;
+
+        if (typeof window.FileReader !== 'function') {
+            write("The file API isn't supported on this browser yet.");
+            return;
+        }
+
+        input = document.getElementById('imgfile');
+        if (!input) {
+            write("Um, couldn't find the imgfile element.");
+        }
+        else if (!input.files) {
+            write("This browser doesn't seem to support the `files` property of file inputs.");
+        }
+        else if (!input.files[0]) {
+            write("Please select a file before clicking 'Load'");
+        }
+        else {
+            file = input.files[0];
+			fileName = file.name;
+            fr = new FileReader();
+            fr.onload = createImage;
+            fr.readAsDataURL(file);
+        }
+
+        function createImage() {
+            img = new Image();
+            img.onload = imageLoaded;
+            img.src = fr.result;
+			//
+			ballImg = new Image();
+			ballImg.src = levelBuilder.defaults.ball.img;
+			//
+			pocketImg = new Image();
+			pocketImg.src = levelBuilder.defaults.pocket.img;
+        }
+
+        function imageLoaded() {
+            
+			scaleX = img.width / canvas.width;
+			scaleY = img.height / canvas.height;
+			imgHeight = img.height;
+			console.log("Scale factors are " + scaleX + "," + scaleY );
+			levelBuilder.createWorld( fileName, img.width, img.height );
+			render();
+        }
+		
+		function write(msg) {
+            var p = document.createElement('p');
+            p.innerHTML = msg;
+            document.body.appendChild(p);
+        }
+    }
+
+	function render() {
+		var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+		context.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img,0,0,canvas.width,canvas.height);
+		for( var i in levelBuilder.result.models ) {
+			renderModel( ctx, levelBuilder.result.models[i] );
+		}
+		editor.set( levelBuilder.result );
+		editor.expandAll()
+	}
+	
+	function renderModel( ctx, model ) {
+		console.log('render model');
+		console.log( model );
+		switch( model.class ) {
+			case "Ball": {
+				var pp = pointToScreen( model.position );
+				var w = ballImg.width/ scaleX;
+				var h = ballImg.height / scaleY;
+				ctx.drawImage(ballImg, pp.x - w/2 ,  pp.y - h/2, w , h );
+				break;
+			}
+			case "Pocket": {
+				var pp = pointToScreen( model.center );
+				var w = pocketImg.width/ scaleX;
+				var h = pocketImg.height / scaleY;
+				ctx.drawImage(pocketImg, pp.x - w/2 ,  pp.y - h/2, w , h );
+				break;
+			}
+			case "Wall": {
+				var p1 = pointToScreen( model.start );
+				var p2 = pointToScreen( model.end );
+				ctx.beginPath();
+				ctx.moveTo( p1.x, p1.y );
+				ctx.lineTo( p2.x, p2.y );
+				ctx.lineWidth=3;
+				ctx.strokeStyle= "#ff3333";
+				ctx.lineCap = 'round';
+				ctx.stroke();
+				break;
+			}
+		}
+		
+	}
+	
+	function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+    }
+	
+	function pointToCocos( p ) {
+		return {
+			x: p.x*scaleX ,
+			y: imgHeight - p.y*scaleY 
+		};
+	}
+	
+	function pointToScreen( p ) {
+		return {
+			x: p.x/scaleX ,
+			y: (imgHeight - p.y)/scaleY 
+		};
+	}	
+	
+	function mouseDownHandler( evt ) {
+		var mousePos = getMousePos(canvas, evt);
+		var point = pointToCocos( mousePos );
+        console.log( 'Mouse down position: ' + point.x + ',' + point.y );
+		console.log( 'Mode is ' + getCurrentMode() );
+		switch( getCurrentMode() ) {
+			case 'wall' : {
+				wall_start = point;
+				break;
+			}
+		}
+	}
+
+	function mouseUpHandler( evt ) {
+		var mousePos = getMousePos(canvas, evt);
+		var point = pointToCocos( mousePos );
+        console.log( 'Mouse up position: ' + point.x + ',' + point.y );
+		switch( getCurrentMode() ) {
+			case 'ball' : {
+				levelBuilder.placeBall( point.x, point.y );
+				render();
+				break;
+			}
+			case 'pocket': {
+				levelBuilder.placePocket( point.x, point.y );
+				render();
+				break;			
+			}
+			case 'wall': {
+				wall_end = point;
+				levelBuilder.placeWall( wall_start, wall_end );
+				wall_start = null;
+				render();
+				break;
+			}
+		}
+	}
+	
+	function mouseMoveHandler( evt ) {
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");	
+		var mousePos = getMousePos(canvas, evt);
+		var point = pointToCocos( mousePos );
+		switch( getCurrentMode() )  {
+			case 'wall': {
+				if( wall_start != null ) {
+					render();
+					
+					renderModel( ctx, { class:'Wall', start: wall_start, end: point } );
+				}
+				break;
+			}
+		}
+	}
+	
+	function getCurrentMode() {
+		return $('input[name="mode"]:checked').val();
+	}
+
+	function fromEditorToBuilder() {
+		levelBuilder.result = editor.get();
+		render();
+	}
+	
+	function downloadResult() {
+		var json_raw = JSON.stringify( levelBuilder.result ); 
+		var pom = document.createElement('a');
+		pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(json_raw) );
+		pom.setAttribute('download', 'level_'+levelBuilder.result.id+'.json');
+		pom.click();
+	}
+	
+</script>
+
+<script type='text/javascript' src='level_builder.js'></script>
+
+</head>
+
+
+<body>
+	<form action='#' onsubmit="return false;">
+    <label for='imgfile'>Load background: </label> <input type='file' id='imgfile' />
+    <input type='button' id='btnLoad' value='Load' onclick='loadImage();' />
+	</form>
+	<div id='toolbar'>
+			<input id='btn_move' type='radio' name='mode' value='move' checked='checked' /><label for='btn_move'>Move</label>
+			<input id='btn_wall' type='radio' name='mode' value='wall' /><label for='btn_wall'>Draw wall</label>
+			<input id='btn_pocket' type='radio' name='mode' value='pocket' /><label for='btn_pocket'>Place pocket</label>
+			<input id='btn_ball' type='radio' name='mode' value='ball' /><label for='btn_ball'>Place ball</label>			
+	</div>
+  <canvas id="canvas" width="960" height="640" style='float:left;-webkit-user-select: none;-user-select: none;cursor: crosshair;'></canvas>
+  <div style="width: 400px; height: 500px;float:left;margin-left:10px" >
+  <div id="jsoneditor" style="width: 400px; height: 500px;" ></div>
+  <button onclick='fromEditorToBuilder();'>Apply changes</button>
+  <button onclick='downloadResult();'>Download JSON</button>
+  </div>
+  
+  <script type='text/javascript'>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+
+	canvas.addEventListener( 'mousedown', mouseDownHandler );
+	canvas.addEventListener( 'mousemove', mouseMoveHandler );	
+	canvas.addEventListener( 'mouseup', mouseUpHandler );
+	//
+	var container = document.getElementById("jsoneditor");
+    var editor = new jsoneditor.JSONEditor(container);
+	
+  </script>
+</body>
+
+</html>
