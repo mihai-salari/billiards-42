@@ -88,7 +88,7 @@ enum {
 
 -(void) createController {
     _controller = [[GameController alloc] init];
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"level0" ofType:@"json"];
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"level_1" ofType:@"json"];
     [_controller loadFromJSON:path];
     _controller.renderLayer = self;
     _controller.physicsSpace = _space;

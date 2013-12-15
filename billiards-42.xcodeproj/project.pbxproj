@@ -190,9 +190,9 @@
 		84CB538417F3FC5100C01EE5 /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB538317F3FC5100C01EE5 /* Ball.m */; };
 		84CB538717F6D03800C01EE5 /* PhysicsComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB538617F6D03800C01EE5 /* PhysicsComponent.m */; };
 		84CB539117F8A77800C01EE5 /* ball1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CB538E17F8A77800C01EE5 /* ball1.png */; };
-		84CB539217F8A77800C01EE5 /* level0.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CB538F17F8A77800C01EE5 /* level0.json */; };
-		84CB539317F8A77800C01EE5 /* level0.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CB539017F8A77800C01EE5 /* level0.png */; };
 		84CB539617F8C54500C01EE5 /* ModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB539517F8C54500C01EE5 /* ModelFactory.m */; };
+		84CD01FD185E402500E76C0D /* level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CD01FC185E402400E76C0D /* level_1.json */; };
+		84CD01FF185E44D100E76C0D /* level0.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CD01FE185E44D100E76C0D /* level0.png */; };
 		8A2B80BB1834B35100E913B9 /* BallControlComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B80BA1834B35100E913B9 /* BallControlComponent.m */; };
 		8A58A46D17F948E500F1B302 /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A58A46C17F948E500F1B302 /* CreditsScene.m */; };
 		8A58A47017F9490600F1B302 /* CreditsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A58A46F17F9490600F1B302 /* CreditsLayer.m */; };
@@ -582,10 +582,10 @@
 		84CB538917F6F3FA00C01EE5 /* PhysicsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PhysicsModel.h; path = Components/Protocols/PhysicsModel.h; sourceTree = "<group>"; };
 		84CB538A17F7007500C01EE5 /* RenderableModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RenderableModel.h; path = Components/Protocols/RenderableModel.h; sourceTree = "<group>"; };
 		84CB538E17F8A77800C01EE5 /* ball1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball1.png; path = Resources/ball1.png; sourceTree = "<group>"; };
-		84CB538F17F8A77800C01EE5 /* level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = level0.json; path = Resources/level0.json; sourceTree = "<group>"; };
-		84CB539017F8A77800C01EE5 /* level0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = level0.png; path = Resources/level0.png; sourceTree = "<group>"; };
 		84CB539417F8C54500C01EE5 /* ModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelFactory.h; path = Models/ModelFactory.h; sourceTree = "<group>"; };
 		84CB539517F8C54500C01EE5 /* ModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelFactory.m; path = Models/ModelFactory.m; sourceTree = "<group>"; };
+		84CD01FC185E402400E76C0D /* level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = level_1.json; path = Resources/level_1.json; sourceTree = "<group>"; };
+		84CD01FE185E44D100E76C0D /* level0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = level0.png; path = Resources/level0.png; sourceTree = "<group>"; };
 		8A2B80B91834B35100E913B9 /* BallControlComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallControlComponent.h; sourceTree = "<group>"; };
 		8A2B80BA1834B35100E913B9 /* BallControlComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallControlComponent.m; sourceTree = "<group>"; };
 		8A58A46B17F948E500F1B302 /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsScene.h; sourceTree = "<group>"; };
@@ -692,10 +692,10 @@
 		84C6441C17EAECB900696084 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84CD01FE185E44D100E76C0D /* level0.png */,
+				84CD01FC185E402400E76C0D /* level_1.json */,
 				841CA1221832BA81000AC5A2 /* pocket.png */,
 				84CB538E17F8A77800C01EE5 /* ball1.png */,
-				84CB538F17F8A77800C01EE5 /* level0.json */,
-				84CB539017F8A77800C01EE5 /* level0.png */,
 				84C6441D17EAECB900696084 /* Default.png */,
 				84C6441F17EAECB900696084 /* Default@2x.png */,
 				84C6442117EAECB900696084 /* Default-568h@2x.png */,
@@ -1366,15 +1366,15 @@
 				84C6442017EAECB900696084 /* Default@2x.png in Resources */,
 				84C6442A17EAECB900696084 /* Icon-Small.png in Resources */,
 				84C6442617EAECB900696084 /* Icon-72.png in Resources */,
-				84CB539317F8A77800C01EE5 /* level0.png in Resources */,
 				841CA1231832BA81000AC5A2 /* pocket.png in Resources */,
+				84CD01FF185E44D100E76C0D /* level0.png in Resources */,
 				84C6441E17EAECB900696084 /* Default.png in Resources */,
 				84C6442817EAECB900696084 /* Icon-Small-50.png in Resources */,
 				84C6443317EAECB900696084 /* iTunesArtwork in Resources */,
 				84CB539117F8A77800C01EE5 /* ball1.png in Resources */,
 				84C6442C17EAECB900696084 /* Icon-Small@2x.png in Resources */,
-				84CB539217F8A77800C01EE5 /* level0.json in Resources */,
 				84C6442417EAECB900696084 /* Default-Landscape~ipad.png in Resources */,
+				84CD01FD185E402500E76C0D /* level_1.json in Resources */,
 				84C6461217EAECBB00696084 /* grossini_dance_atlas.png in Resources */,
 				84C6442217EAECB900696084 /* Default-568h@2x.png in Resources */,
 				84C6443017EAECB900696084 /* Icon@2x.png in Resources */,

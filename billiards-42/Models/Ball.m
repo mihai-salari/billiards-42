@@ -40,7 +40,7 @@
 
 - (CGPoint) getPosition
 {
-    return self.position;
+    return CGPointMake( self.position.x/2, self.position.y /2);
 }
 
 // PhysicsModel
@@ -62,8 +62,8 @@
 
 
 - (void) _createBody {
-    _cpBody = cpBodyNew(10.0f, cpMomentForCircle(10.0f, 0, self.radius, cpvzero));
-    _cpShape = cpCircleShapeNew(_cpBody, self.radius, cpvzero);
+    _cpBody = cpBodyNew(10.0f, cpMomentForCircle(10.0f, 0, self.radius / 2, cpvzero));
+    _cpShape = cpCircleShapeNew(_cpBody, self.radius / 2, cpvzero);
     cpShapeSetElasticity( _cpShape, 0.9f );
 	cpShapeSetFriction( _cpShape, 0.5f );
 }
