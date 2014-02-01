@@ -8,7 +8,10 @@
 
 #import "WorldView.h"
 
-@implementation WorldView
+@implementation WorldView {
+    int timeUniformLocation;
+    float totalTime;
+}
 
 - (void) startup {
     // creates sprite on layer
@@ -20,11 +23,27 @@
     
     self.node = sprite; //save sprite back to model
     
+    [self setupShader:sprite]; // add effects
+    
     [self.renderLayer addChild:sprite];
 }
 
 - (void) update:(ccTime)delta {
+    totalTime += delta;
+    [self.node.shaderProgram use];
+    glUniform1f(timeUniformLocation, totalTime);
+}
+
+- (void) setupShader:(CCSprite*) sprite {
     
+    const GLchar * fragmentSource = (GLchar*) [[NSString stringWithContentsOfFile:[CCFileUtils fullPathFromRelativePath:@"background.fsh"] encoding:NSUTF8StringEncoding error:nil] UTF8String];
+    sprite.shaderProgram = [[CCGLProgram alloc] initWithVertexShaderByteArray:ccPositionTextureA8Color_vert
+                                                      fragmentShaderByteArray:fragmentSource];
+    [sprite.shaderProgram addAttribute:kCCAttributeNamePosition index:kCCVertexAttrib_Position];
+    [sprite.shaderProgram addAttribute:kCCAttributeNameTexCoord index:kCCVertexAttrib_TexCoords];
+    [sprite.shaderProgram link];
+    [sprite.shaderProgram updateUniforms];
+    timeUniformLocation = glGetUniformLocation(sprite.shaderProgram->_program, "u_time");
 }
 
 @end

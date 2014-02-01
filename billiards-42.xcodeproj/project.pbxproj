@@ -15,6 +15,10 @@
 		841CA11E182D9BA9000AC5A2 /* ZoomAndPanComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA11D182D9BA9000AC5A2 /* ZoomAndPanComponent.m */; };
 		841CA1211832B97A000AC5A2 /* PocketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841CA1201832B97A000AC5A2 /* PocketView.m */; };
 		841CA1231832BA81000AC5A2 /* pocket.png in Resources */ = {isa = PBXBuildFile; fileRef = 841CA1221832BA81000AC5A2 /* pocket.png */; };
+		8485E0A2189D663400870CEE /* level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = 8485E0A0189D663400870CEE /* level_4.json */; };
+		8485E0A3189D663400870CEE /* level4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8485E0A1189D663400870CEE /* level4.png */; };
+		8485E0A6189D68E400870CEE /* background.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 8485E0A5189D68E400870CEE /* background.fsh */; };
+		8485E0A7189D69AE00870CEE /* background.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8485E0A5189D68E400870CEE /* background.fsh */; };
 		84C6440817EAECB900696084 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440717EAECB900696084 /* QuartzCore.framework */; };
 		84C6440A17EAECB900696084 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440917EAECB900696084 /* OpenGLES.framework */; };
 		84C6440C17EAECB900696084 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440B17EAECB900696084 /* OpenAL.framework */; };
@@ -220,6 +224,9 @@
 		841CA1201832B97A000AC5A2 /* PocketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PocketView.m; path = Views/PocketView.m; sourceTree = "<group>"; };
 		841CA1221832BA81000AC5A2 /* pocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pocket.png; path = Resources/pocket.png; sourceTree = "<group>"; };
 		841CA12718376CB4000AC5A2 /* GameDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameDelegate.h; path = Controllers/GameDelegate.h; sourceTree = "<group>"; };
+		8485E0A0189D663400870CEE /* level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = level_4.json; path = Resources/level_4.json; sourceTree = "<group>"; };
+		8485E0A1189D663400870CEE /* level4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = level4.png; path = Resources/level4.png; sourceTree = "<group>"; };
+		8485E0A5189D68E400870CEE /* background.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = background.fsh; sourceTree = "<group>"; };
 		84C6440417EAECB900696084 /* billiards-42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "billiards-42.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C6440717EAECB900696084 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84C6440917EAECB900696084 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -634,6 +641,14 @@
 			path = "CCNode+SFGestureRecognizers";
 			sourceTree = "<group>";
 		};
+		8485E0A4189D68BC00870CEE /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				8485E0A5189D68E400870CEE /* background.fsh */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
 		84C643FB17EAECB900696084 = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +686,7 @@
 		84C6441B17EAECB900696084 /* billiards-42 */ = {
 			isa = PBXGroup;
 			children = (
+				8485E0A4189D68BC00870CEE /* Shaders */,
 				841CA118182D83A8000AC5A2 /* CCNode+SFGestureRecognizers */,
 				8AC42FCC17F153D6006479E9 /* Scenes */,
 				84C6462517EE266B00696084 /* Controllers */,
@@ -692,6 +708,8 @@
 		84C6441C17EAECB900696084 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8485E0A0189D663400870CEE /* level_4.json */,
+				8485E0A1189D663400870CEE /* level4.png */,
 				84CD01FE185E44D100E76C0D /* level0.png */,
 				84CD01FC185E402400E76C0D /* level_1.json */,
 				841CA1221832BA81000AC5A2 /* pocket.png */,
@@ -1338,6 +1356,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = SalkoDev;
+				TargetAttributes = {
+					84C6440317EAECB900696084 = {
+						DevelopmentTeam = 86NCGJ28M4;
+					};
+				};
 			};
 			buildConfigurationList = 84C643FF17EAECB900696084 /* Build configuration list for PBXProject "billiards-42" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1361,11 +1384,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8485E0A7189D69AE00870CEE /* background.fsh in Resources */,
 				84C6442E17EAECB900696084 /* Icon.png in Resources */,
 				84C6458C17EAECBB00696084 /* ChangeLog in Resources */,
 				84C6442017EAECB900696084 /* Default@2x.png in Resources */,
 				84C6442A17EAECB900696084 /* Icon-Small.png in Resources */,
 				84C6442617EAECB900696084 /* Icon-72.png in Resources */,
+				8485E0A2189D663400870CEE /* level_4.json in Resources */,
 				841CA1231832BA81000AC5A2 /* pocket.png in Resources */,
 				84CD01FF185E44D100E76C0D /* level0.png in Resources */,
 				84C6441E17EAECB900696084 /* Default.png in Resources */,
@@ -1378,6 +1403,7 @@
 				84C6461217EAECBB00696084 /* grossini_dance_atlas.png in Resources */,
 				84C6442217EAECB900696084 /* Default-568h@2x.png in Resources */,
 				84C6443017EAECB900696084 /* Icon@2x.png in Resources */,
+				8485E0A3189D663400870CEE /* level4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1497,6 +1523,7 @@
 				84C644C817EAECBA00696084 /* CCScene.m in Sources */,
 				84C6444717EAECB900696084 /* CCActionGrid3D.m in Sources */,
 				84C6459017EAECBB00696084 /* mat4stack.c in Sources */,
+				8485E0A6189D68E400870CEE /* background.fsh in Sources */,
 				84C645DB17EAECBB00696084 /* cpRotaryLimitJoint.c in Sources */,
 				84C644EC17EAECBA00696084 /* CCSpriteFrameCache.m in Sources */,
 				841CA11018146DBA000AC5A2 /* ViewFactory.m in Sources */,
