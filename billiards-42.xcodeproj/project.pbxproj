@@ -19,6 +19,9 @@
 		8485E0A3189D663400870CEE /* level4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8485E0A1189D663400870CEE /* level4.png */; };
 		8485E0A6189D68E400870CEE /* background.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 8485E0A5189D68E400870CEE /* background.fsh */; };
 		8485E0A7189D69AE00870CEE /* background.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8485E0A5189D68E400870CEE /* background.fsh */; };
+		8485E0A9189D981000870CEE /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 8485E0A8189D981000870CEE /* ball.png */; };
+		8485E0AB189D998300870CEE /* ball.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 8485E0AA189D998300870CEE /* ball.fsh */; };
+		8485E0AC189D9B3000870CEE /* ball.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8485E0AA189D998300870CEE /* ball.fsh */; };
 		84C6440817EAECB900696084 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440717EAECB900696084 /* QuartzCore.framework */; };
 		84C6440A17EAECB900696084 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440917EAECB900696084 /* OpenGLES.framework */; };
 		84C6440C17EAECB900696084 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6440B17EAECB900696084 /* OpenAL.framework */; };
@@ -227,6 +230,8 @@
 		8485E0A0189D663400870CEE /* level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = level_4.json; path = Resources/level_4.json; sourceTree = "<group>"; };
 		8485E0A1189D663400870CEE /* level4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = level4.png; path = Resources/level4.png; sourceTree = "<group>"; };
 		8485E0A5189D68E400870CEE /* background.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = background.fsh; sourceTree = "<group>"; };
+		8485E0A8189D981000870CEE /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball.png; path = Resources/ball.png; sourceTree = "<group>"; };
+		8485E0AA189D998300870CEE /* ball.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ball.fsh; sourceTree = "<group>"; };
 		84C6440417EAECB900696084 /* billiards-42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "billiards-42.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C6440717EAECB900696084 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84C6440917EAECB900696084 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -645,6 +650,7 @@
 			isa = PBXGroup;
 			children = (
 				8485E0A5189D68E400870CEE /* background.fsh */,
+				8485E0AA189D998300870CEE /* ball.fsh */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -708,6 +714,7 @@
 		84C6441C17EAECB900696084 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8485E0A8189D981000870CEE /* ball.png */,
 				8485E0A0189D663400870CEE /* level_4.json */,
 				8485E0A1189D663400870CEE /* level4.png */,
 				84CD01FE185E44D100E76C0D /* level0.png */,
@@ -1384,6 +1391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8485E0AC189D9B3000870CEE /* ball.fsh in Resources */,
 				8485E0A7189D69AE00870CEE /* background.fsh in Resources */,
 				84C6442E17EAECB900696084 /* Icon.png in Resources */,
 				84C6458C17EAECBB00696084 /* ChangeLog in Resources */,
@@ -1404,6 +1412,7 @@
 				84C6442217EAECB900696084 /* Default-568h@2x.png in Resources */,
 				84C6443017EAECB900696084 /* Icon@2x.png in Resources */,
 				8485E0A3189D663400870CEE /* level4.png in Resources */,
+				8485E0A9189D981000870CEE /* ball.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1501,6 +1510,7 @@
 				84C6462317EE260D00696084 /* ModelsManager.m in Sources */,
 				8AC42FD717F160B3006479E9 /* ArcadeGameScene.m in Sources */,
 				84C6451E17EAECBA00696084 /* CCES2Renderer.m in Sources */,
+				8485E0AB189D998300870CEE /* ball.fsh in Sources */,
 				8AC42FCF17F1595B006479E9 /* MenuScene.m in Sources */,
 				84C6449017EAECB900696084 /* CCLabelAtlas.m in Sources */,
 				84C644AC17EAECBA00696084 /* CCParallaxNode.m in Sources */,

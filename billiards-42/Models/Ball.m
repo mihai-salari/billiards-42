@@ -30,11 +30,11 @@
 // RenderableModel
 
 - (CGSize) getSize{
-    return CGSizeMake(62.0, 62.0); //stub
+    return CGSizeMake(90.0, 90.0); //stub
 }
 
 - (CCTexture2D*) getTexture {
-    CCTexture2D *_texture = [[CCTextureCache sharedTextureCache] addImage: @"ball1.png" ];
+    CCTexture2D *_texture = [[CCTextureCache sharedTextureCache] addImage: @"ball.png" ];
     return _texture;
 }
 

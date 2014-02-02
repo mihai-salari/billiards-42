@@ -135,7 +135,7 @@ enum {
 	}*/
 	
 	_debugLayer = [CCPhysicsDebugNode debugNodeForCPSpace:_space];
-	_debugLayer.visible = YES;//NO;
+	_debugLayer.visible =  NO;
 	[self addChild:_debugLayer z:100];
 }
 
@@ -330,7 +330,7 @@ enum {
 	else
 		v = cpv( accelY, -accelX);
 	
-	cpSpaceSetGravity( _space, cpvmult(v, 200) );
+	//cpSpaceSetGravity( _space, cpvmult(v, 200) ); // NO we don't want to change gravity
 }
 
 
